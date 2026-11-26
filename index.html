@@ -1,0 +1,930 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0E3A3B">
+<title>مستقبل فتي</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&amp;family=Reem+Kufi:wght@500;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap">
+<style>
+/* Layout: a printed-poster look from فتي's own committee sheet. Paper ground, deep-teal ink, four committee bands (teal, mustard, rust, plum). Sticky header with a scrolling tab strip, then one section per tab. */
+:root{
+  --paper:#F5EEDF; --card:#FFFAF0; --card-2:#EFE5CF; --ink:#0E3A3B; --muted:#5D6A66; --line:#E0D3B8;
+  --teal:#1F6E78; --mustard:#A97C12; --rust:#C24F28; --plum:#5A3F78; --gold:#B8860B; --gold-soft:#F3E3B5;
+  --band-teal:#1F6E78; --band-mustard:#A97C12; --band-rust:#C24F28; --band-plum:#5A3F78; --on-band:#FFF8EA;
+  --c-move:#D9563A; --c-early:#2F8F66; --c-init:#6E4FC4; --c-task:#1F72B8; --c-cult:#B8457A;
+  --ok:#2F8F66; --danger:#B33A3A;
+  --shadow:0 1px 2px rgba(14,58,59,.06),0 8px 22px rgba(14,58,59,.08);
+  --f-wordmark:"Lalezar","Reem Kufi",system-ui,sans-serif;
+  --f-display:"Reem Kufi","IBM Plex Sans Arabic",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0E1C1D; --card:#152828; --card-2:#1D3333; --ink:#F1E8D6; --muted:#A5B1AC; --line:#2A4141;
+  --teal:#4FB0BA; --mustard:#DDAE45; --rust:#EE7C55; --plum:#A88AD6; --gold:#E2B33C; --gold-soft:#3A2F16;
+  --band-teal:#1A5A62; --band-mustard:#7E5D0E; --band-rust:#9A3F21; --band-plum:#48325F; --on-band:#FFF6E4;
+  --c-move:#F07457; --c-early:#4CC18D; --c-init:#A07BF0; --c-task:#5AA6EE; --c-cult:#E26CA3;
+  --ok:#4CC18D; --danger:#E26464; --shadow:0 1px 2px rgba(0,0,0,.35),0 8px 22px rgba(0,0,0,.3); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0E1C1D; --card:#152828; --card-2:#1D3333; --ink:#F1E8D6; --muted:#A5B1AC; --line:#2A4141;
+  --teal:#4FB0BA; --mustard:#DDAE45; --rust:#EE7C55; --plum:#A88AD6; --gold:#E2B33C; --gold-soft:#3A2F16;
+  --band-teal:#1A5A62; --band-mustard:#7E5D0E; --band-rust:#9A3F21; --band-plum:#48325F; --on-band:#FFF6E4;
+  --c-move:#F07457; --c-early:#4CC18D; --c-init:#A07BF0; --c-task:#5AA6EE; --c-cult:#E26CA3;
+  --ok:#4CC18D; --danger:#E26464; --shadow:0 1px 2px rgba(0,0,0,.35),0 8px 22px rgba(0,0,0,.3); color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.65;direction:rtl}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.3}
+p{margin:0}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+img{max-width:100%}
+
+/* Header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px 4px}
+.brand{display:flex;align-items:baseline;gap:10px;min-width:0}
+.wordmark{font-family:var(--f-wordmark);font-size:2rem;line-height:1;color:var(--gold)}
+.brand span{font:700 1rem var(--f-display);color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tools{display:flex;gap:6px;align-items:center}
+nav.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-block:6px 10px;margin-inline:-4px}
+nav.tabs::-webkit-scrollbar{display:none}
+nav.tabs a{flex:0 0 auto;text-decoration:none;color:var(--muted);font:600 .92rem var(--f-body);padding:7px 14px;border-radius:999px;white-space:nowrap}
+nav.tabs a[aria-current="page"]{background:var(--ink);color:var(--paper)}
+nav.tabs a:hover:not([aria-current]){background:var(--card-2);color:var(--ink)}
+
+main{padding-block:22px 120px}
+section.view{display:flex;flex-direction:column;gap:28px}
+.sec-h{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sec-h h2{font-size:1.5rem}
+.sec-h p{color:var(--muted);font-size:.92rem}
+.eyebrow{font:600 .78rem var(--f-body);letter-spacing:.02em;color:var(--gold)}
+.muted{color:var(--muted)}
+.note{color:var(--muted);font-size:.85rem}
+.panel{background:var(--card);border-radius:18px;box-shadow:var(--shadow);padding:18px}
+.empty{text-align:center;color:var(--muted);padding:28px 16px;border:1.5px dashed var(--line);border-radius:16px;background:transparent;font-size:.92rem}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--card-2);color:var(--ink)}
+.num{font-variant-numeric:tabular-nums}
+
+/* Buttons and inputs */
+.btn{display:inline-flex;align-items:center;gap:6px;border:0;border-radius:12px;padding:9px 16px;cursor:pointer;background:var(--ink);color:var(--paper);font:600 .9rem var(--f-body);white-space:nowrap}
+.btn.gold{background:var(--gold);color:#1B1405}
+.btn.ghost{background:var(--card-2);color:var(--ink)}
+.btn.sm{padding:5px 11px;font-size:.8rem;border-radius:9px}
+.btn.del{background:transparent;color:var(--danger);box-shadow:inset 0 0 0 1px var(--line)}
+.btn:disabled{opacity:.5;cursor:default}
+input[type=text],input[type=date],input[type=number],textarea,select{font:inherit;width:100%;min-width:0;padding:8px 11px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+textarea{resize:vertical;min-height:64px}
+.field{display:flex;flex-direction:column;gap:4px;min-width:0}
+.field label{font-size:.8rem;font-weight:600;color:var(--muted)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:end}
+.row > *{flex:1 1 160px}
+.row > .btn{flex:0 0 auto}
+.editonly{display:none}
+body.editing .editonly{display:revert}
+body.editing .viewonly{display:none}
+
+/* Avatar */
+.av{position:relative;border-radius:50%;overflow:hidden;background:var(--card-2);display:grid;place-items:center;flex:0 0 auto;font-family:var(--f-display);font-weight:700;color:var(--teal)}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* HOME */
+.hero{position:relative;border-radius:26px;overflow:hidden;background:var(--band-teal);color:var(--on-band);min-height:min(520px,62vw);display:grid}
+.hero .bg{position:absolute;inset:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:center 62%;display:block}
+.hero .collage{position:absolute;inset:0;display:grid;grid-template-columns:repeat(7,1fr);opacity:.5}
+.hero .collage div{background-size:cover;background-position:center;min-height:0}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,24,25,.92) 8%,rgba(6,24,25,.35) 60%,rgba(6,24,25,.15))}
+.hero .txt{position:relative;align-self:end;padding:26px 24px 24px;display:flex;flex-direction:column;gap:6px}
+.hero h1{font-family:var(--f-wordmark);font-weight:400;font-size:clamp(2.6rem,8vw,4.6rem);line-height:1.05;letter-spacing:0}
+.hero h1 em{font-style:normal;color:#F2C14E}
+.hero .sub{font:700 clamp(1.1rem,3.2vw,1.5rem) var(--f-display);color:#FFE9B8}
+.hero .motto{max-width:60ch;opacity:.92}
+.hero .upl{position:absolute;top:14px;left:14px}
+
+.champs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.champ{border-radius:20px;padding:18px;display:flex;gap:16px;align-items:center;color:var(--on-band);position:relative;overflow:hidden}
+.champ.points{background:var(--band-mustard)}
+.champ.khw{background:var(--band-plum)}
+.champ .av{width:84px;height:84px;font-size:1.8rem;box-shadow:0 0 0 3px #F2C14E;color:var(--band-teal)}
+.champ .lbl{font:600 .82rem var(--f-body);opacity:.85}
+.champ .nm{font:700 1.3rem var(--f-display)}
+.champ .val{font:700 1rem var(--f-body);color:#FFE9B8}
+.champ .medal{position:absolute;left:14px;top:12px;width:40px;height:40px;opacity:.9}
+
+.daily{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.dcard{background:var(--card);border-radius:18px;padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:6px;border-top:5px solid var(--k)}
+.dcard .k{font:600 .8rem var(--f-body);color:var(--k)}
+.dcard h3{font-size:1.1rem}
+.dcard p{color:var(--muted);font-size:.9rem}
+
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.sup{background:var(--card);border-radius:18px;box-shadow:var(--shadow);padding:16px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.sup .av{width:96px;height:96px;font-size:2rem;box-shadow:0 0 0 3px var(--gold)}
+.sup b{font:700 1.02rem var(--f-display)}
+.sup small{color:var(--muted)}
+.mstrip{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:14px 10px}
+.mstrip figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.mstrip .av{width:68px;height:68px;font-size:1.4rem}
+.mstrip figcaption{font-size:.8rem;font-weight:600;line-height:1.3}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.shot{margin:0;background:var(--card);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.shot img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--card-2)}
+.shot figcaption{padding:8px 12px;font-size:.85rem;display:flex;flex-direction:column;gap:6px}
+.shot.ph{aspect-ratio:4/3;display:grid;place-items:center;color:var(--muted);border:1.5px dashed var(--line);background:transparent;box-shadow:none;font-size:.85rem;text-align:center;padding:12px}
+
+.ygoals{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;counter-reset:g}
+.yg{background:var(--card);border-radius:16px;padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:4px;position:relative}
+.yg b{font:700 1.05rem var(--f-display)}
+.yg p{color:var(--muted);font-size:.9rem}
+
+.progs{display:flex;flex-wrap:wrap;gap:8px}
+.prog{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;display:flex;flex-direction:column;gap:2px;flex:1 1 200px}
+.prog b{font:700 1rem var(--f-display);color:var(--teal)}
+.prog small{color:var(--muted)}
+.news{display:flex;flex-direction:column;gap:8px}
+.news li{list-style:none;background:var(--card);border-radius:14px;padding:10px 14px;display:flex;gap:12px;align-items:baseline;box-shadow:var(--shadow)}
+.news ul{padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.news time{font-size:.78rem;color:var(--gold);font-weight:700;white-space:nowrap}
+
+/* POINTS */
+.summary{display:flex;flex-wrap:wrap;gap:8px 22px;color:var(--muted);font-size:.9rem}
+.summary b{color:var(--ink);font-family:var(--f-display);font-size:1.25rem}
+.legend{display:flex;flex-wrap:wrap;gap:6px}
+.legend span{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;color:var(--muted);background:var(--card);border:1px solid var(--line);padding:3px 10px 3px 8px;border-radius:999px}
+.legend svg{width:18px;height:18px}
+.legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:14px}
+.pcard{background:var(--card);border-radius:18px;box-shadow:var(--shadow);padding:16px 12px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;min-width:0}
+.pcard .rank{position:absolute;top:10px;right:12px;font:700 .85rem var(--f-display);color:var(--muted)}
+.pcard.t1 .rank,.pcard.t2 .rank,.pcard.t3 .rank{color:var(--gold)}
+.ringav{position:relative;width:104px;height:104px}
+.ringav .av{width:100%;height:100%;font-size:2rem;border:3px solid var(--card)}
+.ringav svg.ring{position:absolute;inset:-6px;width:calc(100% + 12px);height:calc(100% + 12px);transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:4}
+.ring .bgc{stroke:var(--card-2)}
+.ring .fg{stroke:var(--gold);stroke-linecap:round}
+.gift{position:absolute;bottom:-4px;left:-6px;width:38px;height:38px;border-radius:50%;background:var(--card);display:grid;place-items:center;box-shadow:var(--shadow)}
+.gift svg{width:28px;height:28px}
+.gift.due{animation:pulse 1.8s ease-in-out infinite}
+.gift.done{opacity:.4;filter:grayscale(1)}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.pcard .nm{font-weight:700;text-align:center;line-height:1.35}
+.pts{font:700 1.9rem/1 var(--f-display);font-variant-numeric:tabular-nums}
+.pts small{font:500 .78rem var(--f-body);color:var(--muted);margin-inline-start:4px}
+.status{font-size:.74rem;font-weight:600;padding:2px 10px;border-radius:999px;background:var(--card-2);color:var(--muted)}
+.status.due{background:var(--gold-soft);color:var(--ink)}
+.bars{display:flex;width:100%;height:6px;border-radius:6px;overflow:hidden;background:var(--card-2)}
+.bars i{display:block;height:100%}
+.badges{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;min-height:28px}
+.badges svg{width:28px;height:28px}
+.mrow{background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:14px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+.mhead{display:flex;flex-direction:column;align-items:center;gap:6px;width:90px}
+.mhead .av{width:70px;height:70px;font-size:1.4rem}
+.mbody{min-width:0;display:flex;flex-direction:column;gap:10px}
+.mtop{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px}
+.cat{display:flex;align-items:center;gap:8px;background:var(--paper);border-radius:12px;padding:6px 8px;border-inline-start:4px solid var(--cc)}
+.cat .lbl{flex:1;min-width:0;font-size:.84rem;font-weight:600;line-height:1.3}
+.cat .val{font:700 1.05rem var(--f-display);min-width:26px;text-align:center;font-variant-numeric:tabular-nums}
+.step{display:flex;gap:4px}
+.step button{border:0;border-radius:8px;font:700 .8rem var(--f-body);padding:5px 8px;cursor:pointer;background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.step button.plus{background:var(--cc);color:#fff;box-shadow:none}
+.mlist{display:flex;flex-direction:column;gap:12px}
+
+/* KHAWATER */
+.podium{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-items:end}
+.pod{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;min-width:0}
+.pod .av{width:76px;height:76px;font-size:1.6rem;box-shadow:0 0 0 3px var(--c)}
+.pod .blk{width:100%;border-radius:14px 14px 4px 4px;background:var(--c);color:var(--on-band);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 4px}
+.pod .blk b{font:700 1.4rem var(--f-display)}
+.pod .nm{font-weight:700;font-size:.9rem;line-height:1.3}
+.pod.p1{--c:var(--band-mustard)} .pod.p1 .blk{min-height:120px}
+.pod.p2{--c:var(--band-teal)} .pod.p2 .blk{min-height:90px}
+.pod.p3{--c:var(--band-rust)} .pod.p3 .blk{min-height:66px}
+.ktable{width:100%;border-collapse:collapse;font-size:.9rem}
+.ktable th,.ktable td{padding:10px 8px;text-align:start;border-bottom:1px solid var(--line);vertical-align:middle}
+.ktable th{font-size:.78rem;color:var(--muted);font-weight:600}
+.ktable .who{display:flex;align-items:center;gap:10px;font-weight:700}
+.ktable .who .av{width:38px;height:38px;font-size:.9rem}
+.meter{height:8px;border-radius:8px;background:var(--card-2);overflow:hidden;min-width:70px}
+.meter i{display:block;height:100%;background:var(--plum);border-radius:8px}
+.scroll-x{overflow-x:auto}
+.kform .crit{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:7px 0;border-bottom:1px dashed var(--line)}
+.kform .crit span{font-size:.88rem;font-weight:600}
+.kform .crit small{color:var(--muted);font-weight:400}
+.seg{display:flex;gap:3px;direction:ltr}
+.seg button{border:0;border-radius:8px;padding:5px 8px;font:600 .78rem var(--f-body);background:var(--card-2);color:var(--ink);cursor:pointer;min-width:40px}
+.seg button[aria-pressed="true"]{background:var(--plum);color:#fff}
+.klist{display:flex;flex-direction:column;gap:6px}
+.kitem{display:flex;gap:10px;align-items:center;justify-content:space-between;background:var(--paper);border-radius:12px;padding:8px 12px;font-size:.88rem;flex-wrap:wrap}
+
+/* GOALS */
+.ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.gcard{background:var(--card);border-radius:18px;box-shadow:var(--shadow);padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.gtop{display:flex;align-items:center;gap:12px}
+.gtop .av{width:56px;height:56px;font-size:1.2rem}
+.gtop b{font:700 1.05rem var(--f-display);display:block}
+.donut{width:58px;height:58px;margin-inline-start:auto;position:relative;flex:0 0 auto}
+.donut svg{width:100%;height:100%;transform:rotate(-90deg)}
+.donut circle{fill:none;stroke-width:6}
+.donut .bgc{stroke:var(--card-2)} .donut .fg{stroke:var(--teal);stroke-linecap:round}
+.donut span{position:absolute;inset:0;display:grid;place-items:center;font:700 .85rem var(--f-display)}
+.glist{display:flex;flex-direction:column;gap:8px}
+.gl{display:flex;flex-direction:column;gap:4px}
+.gl .t{display:flex;justify-content:space-between;gap:8px;font-size:.86rem;font-weight:600}
+.gl .t span:last-child{color:var(--muted);font-variant-numeric:tabular-nums}
+.gbar{height:8px;border-radius:8px;background:var(--card-2);overflow:hidden}
+.gbar i{display:block;height:100%;border-radius:8px;background:var(--teal)}
+.gbar i.full{background:var(--ok)}
+.gseg{display:flex;gap:3px;flex-wrap:wrap}
+.gseg button{border:0;border-radius:7px;padding:3px 7px;font:600 .74rem var(--f-body);background:var(--card-2);color:var(--ink);cursor:pointer}
+.gseg button[aria-pressed="true"]{background:var(--teal);color:#fff}
+.gdefs{display:flex;flex-direction:column;gap:8px}
+.gdef{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:center}
+
+/* COMMITTEES */
+.compare{display:flex;flex-direction:column;gap:10px}
+.cmpr{display:grid;grid-template-columns:120px 1fr 52px;gap:10px;align-items:center;font-size:.9rem;font-weight:600}
+.cmpr .track{height:14px;border-radius:8px;background:var(--card-2);overflow:hidden}
+.cmpr .track i{display:block;height:100%;border-radius:8px}
+.cmpr b{font-family:var(--f-display);text-align:end;font-variant-numeric:tabular-nums}
+.comm{border-radius:24px;background:var(--b);color:var(--on-band);padding:20px;display:grid;grid-template-columns:118px 1fr;gap:18px;align-items:start}
+.comm .ico{width:118px;height:118px;border-radius:50%;background:var(--paper);box-shadow:0 0 0 3px var(--b),0 0 0 6px var(--on-band);display:grid;place-items:center;font-size:3.2rem}
+.comm h3{font-family:var(--f-wordmark);font-weight:400;font-size:2rem;line-height:1.15}
+.comm .desc{opacity:.95}
+.comm .cbody{display:flex;flex-direction:column;gap:14px;min-width:0}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1.5px solid color-mix(in srgb,var(--on-band) 70%,transparent);border-radius:999px;padding:3px 12px 3px 4px;font-weight:600;font-size:.9rem}
+.pill .av{width:30px;height:30px;font-size:.8rem}
+.pill.new{background:color-mix(in srgb,var(--on-band) 18%,transparent)}
+.pill button{border:0;background:transparent;color:var(--on-band);cursor:pointer;font-size:1rem;line-height:1;padding:0 2px}
+.cbox{background:color-mix(in srgb,#000 16%,transparent);border-radius:16px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.cbox h4{margin:0;font:700 .95rem var(--f-display);display:flex;justify-content:space-between;gap:8px;align-items:center}
+.cbox .pct{font:700 1.1rem var(--f-display);font-variant-numeric:tabular-nums}
+.cbar{height:8px;border-radius:8px;background:color-mix(in srgb,var(--on-band) 22%,transparent);overflow:hidden}
+.cbar i{display:block;height:100%;background:#F2C14E;border-radius:8px}
+.tasks{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+.tasks li{display:flex;gap:8px;align-items:flex-start;font-size:.9rem}
+.tasks li.done span{text-decoration:line-through;opacity:.75}
+.tick{flex:0 0 auto;width:22px;height:22px;border-radius:7px;border:1.5px solid var(--on-band);background:transparent;color:var(--on-band);display:grid;place-items:center;font-size:.8rem;padding:0;cursor:default}
+body.editing .tick{cursor:pointer}
+.tasks li.done .tick{background:#F2C14E;border-color:#F2C14E;color:#1B1405}
+.tasks li span{flex:1;min-width:0}
+.wins{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
+.win{background:color-mix(in srgb,var(--on-band) 12%,transparent);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.win img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.win div{padding:8px 10px;font-size:.85rem;display:flex;flex-direction:column;gap:4px}
+.win time{font-size:.72rem;opacity:.8}
+.win.ph{border:1.5px dashed color-mix(in srgb,var(--on-band) 55%,transparent);background:transparent;min-height:110px;display:grid;place-items:center;text-align:center;padding:10px;font-size:.82rem;opacity:.85}
+.comm input,.comm textarea,.comm select{background:color-mix(in srgb,#000 18%,var(--paper));color:var(--ink)}
+.comm .btn.ghost{background:color-mix(in srgb,var(--on-band) 18%,transparent);color:var(--on-band)}
+
+/* LIBRARY */
+.lib-feature{border-radius:22px;background:var(--band-plum);color:var(--on-band);padding:20px;display:flex;flex-direction:column;gap:8px}
+.lib-feature h3{font-family:var(--f-wordmark);font-weight:400;font-size:1.8rem}
+.lgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.book{background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:14px;display:grid;grid-template-columns:54px 1fr;gap:12px;align-items:start;min-width:0}
+.spine{width:54px;height:76px;border-radius:4px 8px 8px 4px;background:var(--sc);color:#fff;display:grid;place-items:center;font:700 1.4rem var(--f-wordmark);box-shadow:inset 6px 0 0 rgba(0,0,0,.18)}
+.spine.pod{border-radius:50%;height:54px;box-shadow:none}
+.book b{font:700 1rem var(--f-display);display:block;line-height:1.35}
+.book .by{font-size:.82rem;color:var(--muted)}
+.book p{font-size:.86rem;margin-top:4px}
+.book .tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 12px;font:600 .84rem var(--f-body);cursor:pointer;color:var(--muted)}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+/* VISION (نقطة تحوّل) */
+.vhero{border-radius:26px;background:var(--ink);color:var(--paper);padding:30px 24px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.vhero h2{font-family:var(--f-wordmark);font-weight:400;font-size:clamp(2.4rem,7vw,3.8rem);line-height:1.05;color:#F2C14E}
+.vhero .ayah{font:600 1.15rem var(--f-display);opacity:.95}
+.vhero small{opacity:.7}
+.halves{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.half{border-radius:18px;padding:16px;background:var(--b);color:var(--on-band);display:flex;flex-direction:column;gap:4px}
+.half .n{font:400 2.4rem/1 var(--f-wordmark);opacity:.9}
+.half b{font:700 1.15rem var(--f-display)}
+.half p{font-size:.88rem;opacity:.92}
+.skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.skill{background:var(--card);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow)}
+.skill b{font:700 1rem var(--f-display);color:var(--teal);display:block}
+.skill p{font-size:.86rem;color:var(--muted)}
+.equation{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;font:700 1.2rem var(--f-display)}
+.equation span{background:var(--card);border-radius:12px;padding:8px 16px;box-shadow:var(--shadow)}
+.equation i{font-style:normal;color:var(--gold)}
+.tips{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;counter-reset:t;padding:0;margin:0;list-style:none}
+.tips li{background:var(--card);border-radius:14px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;font-size:.9rem;box-shadow:var(--shadow)}
+.tips li::before{counter-increment:t;content:counter(t);font:700 1rem var(--f-display);color:var(--gold);min-width:1.2em}
+.score{width:100%;border-collapse:collapse;font-size:.9rem}
+.score td,.score th{padding:9px 8px;border-bottom:1px solid var(--line);text-align:start}
+.score th{font-size:.78rem;color:var(--muted)}
+.score td:last-child{font:700 1rem var(--f-display);color:var(--gold);white-space:nowrap}
+.cycle{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.cycle div{background:var(--card);border-radius:14px;padding:12px;box-shadow:var(--shadow);text-align:center}
+.cycle b{font:700 1.2rem var(--f-display);color:var(--rust);display:block}
+.cycle p{font-size:.84rem;color:var(--muted)}
+.oath{border-radius:22px;background:var(--band-mustard);color:var(--on-band);padding:22px;text-align:center;display:flex;flex-direction:column;gap:12px;align-items:center}
+.oath h3{font-family:var(--f-wordmark);font-weight:400;font-size:2rem}
+.oath .pills{justify-content:center}
+.ideas{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.ideas .panel h3{font-size:1.1rem;margin-bottom:8px}
+.ideas ul{margin:0;padding:0 1.1em 0 0;display:flex;flex-direction:column;gap:4px;font-size:.9rem}
+
+/* Footer + edit bar */
+footer.foot{border-top:1px solid var(--line);padding-block:22px;color:var(--muted);font-size:.85rem}
+footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+footer .slogan{font:400 1.4rem var(--f-wordmark);color:var(--gold)}
+.editbar{position:fixed;inset:auto 0 0;z-index:9;background:var(--ink);color:var(--paper);padding-bottom:env(safe-area-inset-bottom,0px)}
+.editbar .wrap{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding-block:10px}
+.editbar .btn.ghost{background:color-mix(in srgb,var(--paper) 16%,transparent);color:var(--paper)}
+.toast{position:fixed;bottom:calc(84px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--gold);color:#1B1405;padding:8px 18px;border-radius:999px;font-weight:700;font-size:.9rem;z-index:20;max-width:calc(100% - 32px);text-align:center}
+.modal{position:fixed;inset:0;z-index:30;background:rgba(6,24,25,.55);display:grid;place-items:center;padding:16px}
+.modal form{width:min(440px,100%);display:flex;flex-direction:column;gap:10px}
+input[type=password]{font:inherit;width:100%;padding:8px 11px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.ufile{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+
+@media (max-width:560px){
+  .comm{grid-template-columns:1fr;padding:16px}
+  .comm .ico{width:84px;height:84px;font-size:2.3rem}
+  .comm h3{font-size:1.6rem}
+  .pgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .ringav{width:80px;height:80px}
+  .pts{font-size:1.5rem}
+  .mrow{grid-template-columns:1fr}
+  .mhead{flex-direction:row;width:auto}
+  .cmpr{grid-template-columns:92px 1fr 44px;font-size:.82rem}
+  .hero{min-height:300px}
+  .gdef{grid-template-columns:1fr}
+  .wordmark{font-size:1.7rem}
+}
+@media (prefers-reduced-motion:reduce){.gift.due{animation:none}*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="bar">
+      <div class="brand"><span class="wordmark">فتي</span><span id="brandSub">مستقبل · شباب تاسع</span></div>
+      <div class="tools"><button class="btn sm gold" id="editBtn" type="button" hidden="">✎ وضع المشرف</button></div>
+    </div>
+    <nav class="tabs" id="tabs" aria-label="أقسام المنصة"></nav>
+  </div>
+</header>
+<main class="wrap" id="app"><div class="empty">جارٍ التحميل…</div></main>
+<footer class="foot"><div class="wrap"><span class="slogan">فتّي ✦ روح الفريق</span><span id="stamp"></span><span>تاسع VIP</span></div></footer>
+<div class="editbar" id="editbar" hidden=""><div class="wrap"><span id="editMsg">وضع المشرف: عدّل ثم احفظ لينشر التحديث لكل من يفتح الرابط</span><div class="row" style="flex:0 0 auto"><button class="btn ghost" type="button" id="logoutBtn">خروج</button><button class="btn ghost" type="button" id="discardBtn">إلغاء التعديلات</button><button class="btn gold" type="button" id="saveBtn">حفظ ونشر</button></div></div></div>
+<div class="toast" id="toast" hidden=""></div>
+<div class="modal" id="login" hidden=""><form class="panel" id="lg-form" autocomplete="off">
+  <h3>دخول المشرف</h3>
+  <p class="note">التعديلات تُحفظ في مستودع GitHub الخاص بالمنصة. المفتاح يبقى على هذا الجهاز فقط ولا يراه أحد.</p>
+  <div class="field"><label for="lg-repo">المستودع (user/repo)</label><input type="text" id="lg-repo" dir="ltr" placeholder="username/fatiy"></div>
+  <div class="field"><label for="lg-token">مفتاح GitHub (Fine-grained token)</label><input type="password" id="lg-token" dir="ltr" placeholder="github_pat_…"></div>
+  <p class="note" id="lg-err" role="status"></p>
+  <div class="row"><button class="btn" type="submit">دخول</button><button class="btn ghost" type="button" id="lg-cancel">إلغاء</button></div>
+</form></div>
+<input type="file" accept="image/*" class="ufile" id="ufile">
+
+<script type="application/json" id="state">{"savedAt": 1795715462365, "site": {"title": "مستقبل فتي", "subtitle": "شباب تاسع", "motto": "من لاعب في الفريق… إلى قائد يصنع الفريق. هنا نتابع نقاطنا وخواطرنا وأهدافنا ولجاننا، يوماً بيوم.", "groupPhoto": "images/group.jpg", "yearGoals": [{"t": "من لاعب إلى قائد", "d": "كل شاب يقود فقرة كاملة في لقاء واحد على الأقل خلال الموسم"}, {"t": "خاطرة لكل شاب", "d": "كل مشترك يُلقي خاطرة ويتحسّن تقييمه من خاطرة لأخرى"}, {"t": "لجان تنجز", "d": "كل لجنة تحقق مهامها وتوثّق إنجازاً واحداً على الأقل كل شهر"}, {"t": "أهداف تعبّدية جماعية", "d": "الفجر في المسجد، أذكار الصباح والمساء، وختمة موزّعة على الفريق"}, {"t": "طلعة كل شهر", "d": "طلعات سريعة تختارها المجموعة بالتصويت، منها الطلعة النجمة: حديث أبي بكر"}, {"t": "سجلّ الإنجاز", "d": "نوثّق التقدم بالصور والنقاط ونراجعه كل شهر"}], "news": [{"date": "2026-11-26", "t": "انطلاق منصة «مستقبل فتي» لشباب تاسع 🎉"}], "programs": [{"name": "نادي قيادة", "d": "لقاءات الأحد والثلاثاء ومنهج القيادة"}, {"name": "نقطة تحوّل", "d": "نظام الإشراف: من لاعب إلى قائد"}, {"name": "خواطر من الخاطر", "d": "الإلقاء وتقييمه ببنود واضحة"}, {"name": "أنا أعرف ذاتي", "d": "اكتشاف الذات ونقاط القوة"}, {"name": "لوحة النقاط", "d": "كل ٤٠ نقطة = هدية"}, {"name": "تكاليف القروب", "d": "تحديات يومية بالجوال"}]}, "supervisors": [{"name": "", "role": "مشرف المجموعة", "photo": ""}, {"name": "", "role": "مشرف مساعد", "photo": ""}], "gallery": [], "members": {"m01": {"name": "أحمد السعيد", "order": 1, "cats": {"cult": 0, "early": 6, "init": 3, "move": 38, "task": 8}, "giftsGiven": 0, "photo": "images/m01.jpg"}, "m02": {"name": "أسامة النجار", "order": 2, "cats": {"cult": 0, "early": 6, "init": 3, "move": 31, "task": 0}, "giftsGiven": 0, "photo": "images/m02.jpg"}, "m03": {"name": "خالد الإبراهيم", "order": 3, "cats": {"cult": 0, "early": 2, "init": 4, "move": 45, "task": 3}, "giftsGiven": 0, "photo": "images/m03.jpg"}, "m04": {"name": "عمار بوعركي", "order": 4, "cats": {"cult": 0, "early": 13, "init": 5, "move": 41, "task": 11}, "giftsGiven": 0, "photo": "images/m04.jpg"}, "m05": {"name": "محمد الكندري", "order": 5, "cats": {"cult": 0, "early": 7, "init": 2, "move": 35, "task": 0}, "giftsGiven": 0, "photo": "images/m05.jpg"}, "m07": {"name": "يوسف الجارالله", "order": 7, "cats": {"cult": 0, "early": 2, "init": 4, "move": 35, "task": 6}, "giftsGiven": 0, "photo": "images/m07.jpg"}, "m08": {"name": "يوسف الشاهين", "order": 8, "cats": {"cult": 0, "early": 10, "init": 3, "move": 31, "task": 9}, "giftsGiven": 0, "photo": "images/m08.jpg"}, "m09": {"name": "يوسف الوقيان", "order": 9, "cats": {"cult": 0, "early": 10, "init": 5, "move": 45, "task": 12}, "giftsGiven": 0, "photo": "images/m09.jpg"}, "m10": {"name": "يوسف الشمري", "order": 10, "cats": {"cult": 0, "early": 6, "init": 2, "move": 38, "task": 6}, "giftsGiven": 0, "photo": "images/m10.jpg"}, "m11": {"name": "فواز مشعل", "order": 11, "cats": {"cult": 0, "early": 10, "init": 2, "move": 39, "task": 0}, "giftsGiven": 0, "photo": "images/m11.jpg"}, "m12": {"name": "شملان الرومي", "order": 12, "cats": {"cult": 0, "early": 0, "init": 2, "move": 22, "task": 0}, "giftsGiven": 0, "photo": "images/m12.jpg"}, "m13": {"name": "خالد البريدي", "order": 13, "cats": {"cult": 0, "early": 2, "init": 2, "move": 36, "task": 0}, "giftsGiven": 0, "photo": "images/m13.jpg"}, "m14": {"name": "علي المشعل", "order": 14, "cats": {"cult": 0, "early": 4, "init": 2, "move": 36, "task": 0}, "giftsGiven": 0, "photo": "images/m14.jpg"}, "m15": {"name": "فراس الكندري", "order": 15, "cats": {"cult": 0, "early": 6, "init": 3, "move": 43, "task": 11}, "giftsGiven": 0, "photo": "images/m15.jpg"}}, "khawater": [], "goals": [{"id": "g1", "t": "صلاة الفجر في المسجد", "d": "عدد الأيام في الأسبوع"}, {"id": "g2", "t": "أذكار الصباح والمساء", "d": "المداومة اليومية"}, {"id": "g3", "t": "إلقاء خاطرة", "d": "خاطرة واحدة على الأقل"}, {"id": "g4", "t": "قراءة كتاب من مكتبة فتي", "d": "إنهاء كتاب كامل"}, {"id": "g5", "t": "تطبيق تكاليف القروب", "d": "تسليم التكليف قبل ٩ مساءً"}], "progress": {}, "committees": [{"id": "c1", "name": "لجنة الطلعات", "icon": "⛺", "color": "teal", "desc": "ترتّب طلعات المجموعة من اقتراح المكان والتصويت إلى تصوّر فقرات الطلعة.", "members": ["m02", "m07", "m13"], "tasks": [{"t": "٣ خيارات للمكان قبل الطلعة بـ٣ أيام وتصويت في القروب", "done": false}, {"t": "إرسال الموقع والوقت قبل الطلعة بـ٢٤ ساعة", "done": false}, {"t": "تصوّر فقرات الطلعة وتوزيع المسؤوليات", "done": false}], "wins": []}, {"id": "c2", "name": "لجنة البرنامج والفقرات", "icon": "🎯", "color": "mustard", "desc": "تنظّم جدول الفقرات الأسبوعي وتحكّمها وترفع مقترحات التطوير للكابتن.", "members": ["m04", "m03", "m15", "m10"], "tasks": [{"t": "جدول بالدقيقة لكل لقاء", "done": false}, {"t": "مسؤول لكل فقرة", "done": false}, {"t": "«حَكَم وقت» بصافرة ينبّه قبل النهاية", "done": false}, {"t": "رفع مقترحات التطوير للكابتن", "done": false}], "wins": []}, {"id": "c3", "name": "لجنة التواصل", "icon": "📞", "color": "rust", "desc": "تتابع تكاليف الكابتن وتذكّر الشباب وتسجّل من طبّق ومن لم يطبّق.", "members": ["m14", "m08"], "tasks": [{"t": "تذكير بالتكليف قبل الموعد بساعة", "done": false}, {"t": "الرد خلال ساعتين بكلمة «تم»", "done": false}, {"t": "تسجيل من طبّق ومن لم يطبّق أسبوعياً", "done": false}], "wins": []}, {"id": "c4", "name": "لجنة الإعلام", "icon": "📸", "color": "plum", "desc": "توثّق الفقرات والطلعات وتصنع محتوى المجموعة وستوري فتي.", "members": ["m01", "m09", "m05", "m11"], "newMembers": ["m11"], "tasks": [{"t": "توثيق كل لقاء بالصور", "done": false}, {"t": "ستوري فتي أسبوعياً", "done": false}, {"t": "إضافة لقطات البرنامج إلى المنصة", "done": false}], "wins": []}], "featured": {"name": "أحمد النفيس", "d": "روايات بأسلوب قريب من الشباب، تحمل أفكاراً تنمّي التفكير وتبني الشخصية. نختار منها ما يناسب قيمنا وأعمارنا.", "works": []}, "library": [{"cat": "seerah", "t": "صور من حياة الصحابة", "by": "عبد الرحمن رأفت الباشا", "why": "قصص قصيرة مشوّقة عن شباب صنعوا التاريخ، تُقرأ قصة كل ليلة."}, {"cat": "seerah", "t": "الرحيق المختوم", "by": "صفي الرحمن المباركفوري", "why": "السيرة النبوية كاملة بأسلوب مرتّب وسهل؛ القدوة الأولى للقائد."}, {"cat": "seerah", "t": "رجال حول الرسول", "by": "خالد محمد خالد", "why": "صفات القيادة والشجاعة في سير الصحابة."}, {"cat": "seerah", "t": "قصص الأنبياء", "by": "ابن كثير", "why": "دروس الصبر والثبات والدعوة من سير الأنبياء عليهم السلام."}, {"cat": "self", "t": "العادات السبع للمراهقين الأكثر فعالية", "by": "شون كوفي (مترجم)", "why": "مكتوب للمراهقين خصيصاً: المبادرة، والأولويات، والعمل مع الآخرين."}, {"cat": "self", "t": "استمتع بحياتك", "by": "د. محمد العريفي", "why": "مهارات التعامل مع الناس بقصص واقعية وروح إسلامية."}, {"cat": "iman", "t": "لأنك الله", "by": "علي جابر الفيفي", "why": "رحلة قصيرة مع أسماء الله الحسنى تقرّب القلب وتطمئنه."}, {"cat": "iman", "t": "لا تحزن", "by": "د. عائض القرني", "why": "جرعات أمل وتفاؤل مبنية على القرآن والسنة."}, {"cat": "lead", "t": "حياة في الإدارة", "by": "د. غازي القصيبي", "why": "تجربة إدارية حقيقية بأسلوب ممتع؛ دروس في المسؤولية واتخاذ القرار."}, {"cat": "novel", "t": "حيّ بن يقظان", "by": "ابن طفيل", "why": "رواية فكرية كلاسيكية عن التأمل والوصول إلى الحقيقة بالعقل."}, {"cat": "novel", "t": "الشيخ والبحر", "by": "إرنست همنغواي (مترجمة)", "why": "قصة قصيرة عن الإصرار وعدم الاستسلام مهما طال التعب."}, {"cat": "podcast", "t": "خواطر", "by": "أحمد الشقيري", "why": "حلقات قصيرة عن الإتقان والأخلاق والتطوير، تناسب فكرة خواطرنا."}, {"cat": "podcast", "t": "قلبي اطمأن", "by": "غيث", "why": "قصص عطاء ومساعدة حقيقية تعلّم الإحسان والرحمة."}, {"cat": "podcast", "t": "قصص الأنبياء (سلسلة صوتية)", "by": "نبيل العوضي", "why": "سرد مشوّق للاستماع في الطريق أو قبل النوم."}, {"cat": "podcast", "t": "السيرة النبوية (سلسلة صوتية)", "by": "د. طارق السويدان", "why": "السيرة بأسلوب قصصي مع دروس قيادية."}]}</script>
+<script>
+document.addEventListener("DOMContentLoaded", async ()=>{
+  let data = null;
+  try{ const r = await fetch("data.json?t=" + Date.now(), {cache:"no-store"}); if (r.ok) data = await r.json(); }catch(_){}
+  if (!data) data = JSON.parse(document.getElementById("state").textContent);
+  boot(data);
+});
+function boot(DATA){
+const ORIGINAL = JSON.stringify(DATA);
+let S = JSON.parse(ORIGINAL);
+let editing = false, dirty = false, saving = false;
+const GH_KEY = "fatiy-gh-v1";
+const gh = (()=>{ try{ return JSON.parse(localStorage.getItem(GH_KEY)||"null"); }catch(_){ return null; } })() || {};
+
+/* ---------- Static content ---------- */
+const GOAL = 40;
+const CATS = [
+  {k:"move",  label:"فقرة حركية",    c:"--c-move"},
+  {k:"early", label:"حضور مبكر",     c:"--c-early"},
+  {k:"init",  label:"مبادرة",        c:"--c-init"},
+  {k:"task",  label:"تطبيق تكليف",   c:"--c-task"},
+  {k:"cult",  label:"مشاركة ثقافية", c:"--c-cult"},
+];
+const CRIT = [
+  ["البادئة","البسملة والحمد والصلاة على النبي ﷺ"],["تعريف بالموضوع",""],["الشاهد","آية / حديث"],["قصة أو موقف يدعم المعنى",""],
+  ["النصيحة أو الدعاء",""],["الخاتمة",""],["الوقت","بين ٣ و٥ دقائق"],["لغة الجسد","حركة اليد والنظر للجميع"],["نبرة الصوت","ارتفاع ونزول"],["وضوح الشرح","فهمك للخاطرة"]
+];
+const COLORS = {teal:"--band-teal", mustard:"--band-mustard", rust:"--band-rust", plum:"--band-plum"};
+const ROUTES = [
+  ["home","الرئيسية"],["points","لوحة النقاط"],["khawater","ترتيب الخواطر"],["goals","أهداف المشتركين"],["committees","اللجان"],["library","المكتبة"],["vision","نقطة تحوّل"]
+];
+/* Daily rotation: from نقطة تحوّل (challenges, questions, skills) */
+const DAILY = {
+  challenge:[
+    ["آية بصوتك","تلاوة ٣ آيات مع معنى واحد تعلّمته"],["عمل خير اليوم","صورة للعمل دون إظهار وجوه الناس"],["عرّف بزميلك","رسالة صوتية دقيقة عن صفة جميلة فيه"],
+    ["صوّر الآن","فيديو ٣٠ ثانية تتكلم فيه عن المجموعة وتعاونها"],["تحدّي اللياقة","٢٠ تمرين ضغط أو دقيقة بلانك بالفيديو"],["رسالة شكر","اشكر والديك، وشاركنا كيف كان شعورك"],
+    ["لقطة إنجاز","صورة لمهمة أنجزتها في البيت اليوم"],["يوم بلا حرف الحاء","فكّر قبل أن تتكلم، فتملك لسانك بدل أن يملكك"],["ساعتان بالفصحى","في البيت ومع الأصدقاء"],
+    ["يوم بلا شكوى","حوّل كل تذمّر إلى اقتراح"],["٢٤ ساعة بلا ألعاب","واستثمر الوقت في مهارة جديدة"],["صفر مقاطعة","اسمع حتى يُكمل الآخر كلامه"],
+    ["اشكر ٧ أشخاص","بكلمة صادقة ومحدّدة"],["سلّم بالاسم","على كل من تقابله اليوم"]
+  ],
+  question:[
+    "لو تتقن مهارة في يوم واحد، ماذا تختار؟ ولماذا؟","من الشخص الذي غيّر فيك شيئاً؟ وما هو؟","ما أكثر موقف ضحكت فيه مع أصدقائك؟",
+    "لو قدت الفريق أسبوعاً، ما أول قرار تتخذه؟","ما الشيء الذي لا يعرفه أحد هنا عنك؟","متى شعرت أنك فعلاً جزء من هذا الفريق؟",
+    "ما الحلم الذي تريد تحقيقه قبل العشرين؟","من في المجموعة ساعدك يوماً؟ اشكره الآن"
+  ],
+  skill:[
+    ["التواصل والإصغاء","يعبّر عن رأيه بوضوح، ويسمع دون مقاطعة"],["إدارة الوقت","يخطط ليومه، ويلتزم بالموعد دون تذكير"],["ضبط النفس","يتوقف لحظة قبل أن يردّ، ويسمّي شعوره بدل أن ينفجر"],
+    ["المرونة","يرى الخطأ تمريناً لا هزيمة، وينهض بسرعة"],["العمل بروح الفريق","يعرف دوره، ويخدم غيره، ويفرح بنجاحهم"],["قرار حرّ","يقول «لا» بثقة أمام ضغط الأصدقاء"]
+  ],
+  word:[
+    ["﴿إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ﴾","الرعد ١١"],["«كلكم راعٍ، وكلكم مسؤول عن رعيته»","متفق عليه"],
+    ["«يد الله مع الجماعة»","رواه الترمذي"],["﴿وَلَا تَنَازَعُوا فَتَفْشَلُوا وَتَذْهَبَ رِيحُكُمْ﴾","الأنفال ٤٦"],["«أحبّ الأعمال إلى الله أدومها وإن قلّ»","متفق عليه"],
+    ["«المؤمن للمؤمن كالبنيان يشدّ بعضه بعضاً»","متفق عليه"],["﴿وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ﴾","المائدة ٢"]
+  ]
+};
+
+/* ---------- Helpers ---------- */
+const $ = s=>document.querySelector(s);
+const AR = n => Number(n||0).toLocaleString("ar-EG",{maximumFractionDigits:2});
+const esc = s => String(s??"").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safeImg = u => (typeof u==="string" && (/^data:image\/(png|jpe?g|webp|gif);base64,/.test(u) || /^https:\/\//.test(u) || /^images\/[\w.-]+\.(jpe?g|png|webp)$/.test(u))) ? u : "";
+const uid = p => p + Date.now().toString(36) + Math.random().toString(36).slice(2,5);
+const initial = n => (String(n||"").trim()[0]||"؟");
+const members = () => Object.entries(S.members).map(([id,m])=>({id,...m})).sort((a,b)=>(a.order||0)-(b.order||0));
+const mById = id => S.members[id] ? {id,...S.members[id]} : null;
+function av(m, extra=""){ const u = safeImg(m&&m.photo); return `<div class="av ${extra}">${u?`<img src="${u}" alt="">`:esc(initial(m&&m.name))}</div>`; }
+function toast(msg){const t=$("#toast");t.textContent=msg;t.hidden=false;clearTimeout(toast._t);toast._t=setTimeout(()=>t.hidden=true,2600)}
+function getPath(path){ return path.split(".").reduce((o,k)=>o==null?undefined:o[k], S); }
+function setPath(path, v){ const ks=path.split("."); const last=ks.pop(); const o=ks.reduce((o,k)=>o[k],S); o[last]=v; }
+function markDirty(){ dirty = true; updateBar(); }
+function today(){ const d=new Date(); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+function fmtDate(s){ if(!s) return ""; const d=new Date(s+"T12:00:00"); return isNaN(d)?esc(s):d.toLocaleDateString("ar-EG",{day:"numeric",month:"long"}); }
+/* Text or input, depending on mode */
+function T(path, opt={}){
+  const v = getPath(path) ?? "";
+  if (!editing) return esc(v) || (opt.ph ? `<span class="muted">${esc(opt.ph)}</span>` : "");
+  if (opt.area) return `<textarea data-bind="${esc(path)}" placeholder="${esc(opt.ph||"")}" id="f-${esc(path)}">${esc(v)}</textarea>`;
+  return `<input type="text" data-bind="${esc(path)}" value="${esc(v)}" placeholder="${esc(opt.ph||"")}" id="f-${esc(path)}">`;
+}
+const dayNo = (()=>{ const d=new Date(); return Math.floor((Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()))/864e5); })();
+const pickDaily = (arr, salt=0) => arr[(dayNo + salt) % arr.length];
+
+/* ---------- Points logic ---------- */
+const catsOf = m => m.cats || {};
+const total = m => CATS.reduce((s,c)=>s+(Number(catsOf(m)[c.k])||0),0);
+const giftsEarned = m => Math.floor(total(m)/GOAL);
+const giftsGiven = m => Math.min(Number(m.giftsGiven)||0, giftsEarned(m));
+const giftState = m => giftsEarned(m)===0 ? "none" : (giftsGiven(m) < giftsEarned(m) ? "due" : "done");
+function ranked(){ return members().sort((a,b)=>total(b)-total(a) || (a.order||0)-(b.order||0)); }
+const hex = (r,cx=20,cy=20)=>{let p=[];for(let i=0;i<6;i++){const a=Math.PI/3*i-Math.PI/2;p.push((cx+r*Math.cos(a)).toFixed(1)+","+(cy+r*Math.sin(a)).toFixed(1))}return p.join(" ")};
+const shield = (col, inner)=>`<svg viewBox="0 0 40 40" aria-hidden="true"><polygon points="${hex(18)}" fill="var(${col})"/><polygon points="${hex(14.5)}" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="1.2"/>${inner}</svg>`;
+const ICON = {
+  move: shield("--c-move",`<path d="M13 27l5-6 3 3 6-9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="12" r="2.6" fill="#fff"/>`),
+  early: shield("--c-early",`<circle cx="20" cy="21" r="8" fill="none" stroke="#fff" stroke-width="2.4"/><path d="M20 16v5l3.5 2.2" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>`),
+  init: shield("--c-init",`<path d="M20 11a6.5 6.5 0 0 0-3.7 11.8V25h7.4v-2.2A6.5 6.5 0 0 0 20 11z" fill="#fff"/><rect x="16.8" y="26.5" width="6.4" height="2.4" rx="1" fill="#fff"/>`),
+  task: shield("--c-task",`<rect x="13" y="12" width="14" height="17" rx="2" fill="none" stroke="#fff" stroke-width="2.2"/><path d="M16.5 21l2.5 2.5 5-5.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>`),
+  cult: shield("--c-cult",`<path d="M11 14c3-1.4 6-1.4 9 .6 3-2 6-2 9-.6v13c-3-1.4-6-1.4-9 .6-3-2-6-2-9-.6z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/><path d="M20 14.6v13" stroke="#fff" stroke-width="2"/>`),
+  all: `<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="var(--teal)"/><g fill="#fff"><circle cx="20" cy="11" r="2.6"/><circle cx="28.5" cy="17" r="2.6"/><circle cx="25.5" cy="27" r="2.6"/><circle cx="14.5" cy="27" r="2.6"/><circle cx="11.5" cy="17" r="2.6"/><circle cx="20" cy="20" r="3.2"/></g></svg>`,
+  star: `<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="var(--gold)"/><path d="M20 9.5l3.2 6.6 7.2 1-5.2 5 1.3 7.2L20 25.8l-6.5 3.5 1.3-7.2-5.2-5 7.2-1z" fill="#fff"/></svg>`,
+  crown: `<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="var(--ink)"/><path d="M10.5 26l-1.5-11 6.5 5 4.5-8 4.5 8 6.5-5-1.5 11z" fill="var(--gold)"/><rect x="10.5" y="27.5" width="19" height="2.6" rx="1" fill="var(--gold)"/></svg>`,
+  gift: `<svg viewBox="0 0 40 40" aria-hidden="true"><rect x="8" y="17" width="24" height="15" rx="2.5" fill="var(--gold)"/><rect x="6.5" y="12.5" width="27" height="6" rx="2" fill="var(--gold)" stroke="var(--card)" stroke-width="1"/><rect x="18" y="12.5" width="4" height="19.5" fill="var(--rust)"/><path d="M20 12.5c-2-4-7-5-7-2s4 2 7 2c3 0 7 1 7-2s-5-2-7 2z" fill="none" stroke="var(--rust)" stroke-width="2"/></svg>`,
+  medal: `<svg viewBox="0 0 40 40" aria-hidden="true"><path d="M13 3h6l3 10h-6zM27 3h-6l-3 10h6z" fill="#F2C14E" opacity=".7"/><circle cx="20" cy="25" r="11" fill="#F2C14E"/><path d="M20 18.5l2 4.1 4.5.6-3.3 3.1.8 4.5-4-2.2-4 2.2.8-4.5-3.3-3.1 4.5-.6z" fill="#7A5A08"/></svg>`
+};
+const BADGE_DEFS = [
+  {id:"crown", t:"المتصدّر", d:"صاحب أعلى رصيد"},{id:"star", t:"النجم الذهبي", d:"وصل إلى ٤٠ نقطة"},
+  {id:"all", t:"متعدد المواهب", d:"٣ نقاط أو أكثر في كل الفقرات"},{id:"move", t:"بطل الحركة", d:"١٠ نقاط في الفقرة الحركية"},
+  {id:"early", t:"السبّاق", d:"١٠ نقاط في الحضور المبكر"},{id:"init", t:"صاحب المبادرة", d:"١٠ نقاط في المبادرة"},
+  {id:"task", t:"المُنجِز", d:"١٠ نقاط في تطبيق التكليف"},{id:"cult", t:"المثقف", d:"١٠ نقاط في المشاركة الثقافية"},
+];
+function badgesOf(m, max){
+  const c = catsOf(m), out = [];
+  if (max>0 && total(m)===max) out.push("crown");
+  if (total(m)>=GOAL) out.push("star");
+  if (CATS.every(k=>(Number(c[k.k])||0)>=3)) out.push("all");
+  CATS.forEach(k=>{ if((Number(c[k.k])||0)>=10) out.push(k.k); });
+  return out;
+}
+function ring(pct){ const r=48, C=2*Math.PI*r; return `<svg class="ring" viewBox="0 0 104 104" aria-hidden="true"><circle class="bgc" cx="52" cy="52" r="${r}"/><circle class="fg" cx="52" cy="52" r="${r}" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-Math.min(1,pct))}"/></svg>`; }
+
+/* ---------- Khawater logic ---------- */
+const kScore = k => (k.scores||[]).reduce((s,v)=>s+(Number(v)||0),0);
+function kRanking(){
+  const by = {};
+  (S.khawater||[]).forEach(k=>{ if(!S.members[k.m]) return; (by[k.m] ||= []).push(kScore(k)); });
+  return Object.entries(by).map(([id,arr])=>({m:mById(id), n:arr.length, avg:arr.reduce((a,b)=>a+b,0)/arr.length, best:Math.max(...arr)}))
+    .sort((a,b)=>b.avg-a.avg || b.n-a.n || b.best-a.best);
+}
+
+/* ---------- Goals logic ---------- */
+const prog = (mid,gid) => Number(((S.progress||{})[mid]||{})[gid])||0;
+const mGoalPct = mid => (S.goals||[]).length ? (S.goals.reduce((s,g)=>s+prog(mid,g.id),0)/S.goals.length) : 0;
+
+/* ---------- Committees logic ---------- */
+const cPct = c => (c.tasks||[]).length ? Math.round(100*c.tasks.filter(t=>t.done).length/c.tasks.length) : 0;
+
+/* ================= RENDER ================= */
+function route(){ const h = location.hash.replace("#",""); return ROUTES.some(r=>r[0]===h) ? h : "home"; }
+function renderTabs(){
+  const cur = route();
+  $("#tabs").innerHTML = ROUTES.map(([k,l])=>`<a href="#${k}" ${k===cur?'aria-current="page"':""}>${l}</a>`).join("");
+  $("#brandSub").textContent = (S.site.title||"مستقبل فتي").replace(/\s*فتي\s*$/,"") + " · " + (S.site.subtitle||"شباب تاسع");
+}
+function render(){
+  document.body.classList.toggle("editing", editing);
+  renderTabs();
+  const r = route();
+  const fn = {home:vHome, points:vPoints, khawater:vKhawater, goals:vGoals, committees:vCommittees, library:vLibrary, vision:vVision}[r];
+  $("#app").innerHTML = `<section class="view">${fn()}</section>`;
+  const t = S.savedAt ? new Date(S.savedAt) : null;
+  $("#stamp").textContent = t ? "آخر تحديث: " + t.toLocaleString("ar-EG",{dateStyle:"medium",timeStyle:"short"}) : "";
+}
+function secH(title, sub, right=""){ return `<div class="sec-h"><div><h2>${title}</h2>${sub?`<p>${sub}</p>`:""}</div>${right}</div>`; }
+const addBtn = (act, label, extra="") => editing ? `<button class="btn sm ghost" type="button" data-act="${act}" ${extra}>＋ ${label}</button>` : "";
+const delBtn = (path, i, label="حذف") => editing ? `<button class="btn sm del" type="button" data-act="del" data-path="${esc(path)}" data-i="${i}">${label}</button>` : "";
+const upBtn = (target, label="📷 رفع صورة") => editing ? `<button class="btn sm ghost" type="button" data-act="upload" data-target="${esc(target)}">${label}</button>` : "";
+
+/* ----- HOME ----- */
+function vHome(){
+  const ms = members();
+  const hp = safeImg(S.site.groupPhoto);
+  const collage = ms.filter(m=>safeImg(m.photo)).slice(0,14).map(m=>`<div style="background-image:url('${safeImg(m.photo)}')"></div>`).join("");
+  const rk = ranked(); const topP = rk[0] && total(rk[0])>0 ? rk[0] : null;
+  const kr = kRanking(); const topK = kr[0] || null;
+  const ch = pickDaily(DAILY.challenge), q = pickDaily(DAILY.question, 3), sk = pickDaily(DAILY.skill, 1), w = pickDaily(DAILY.word, 2);
+  return `
+  <div class="hero">
+    <div class="bg">${hp?`<img src="${hp}" alt="صورة شباب المجموعة">`:`<div class="collage">${collage}</div>`}</div>
+    <div class="shade"></div>
+    ${editing?`<div class="upl">${upBtn("site.groupPhoto","📷 صورة المجموعة")} ${hp?`<button class="btn sm del" type="button" data-act="clear" data-path="site.groupPhoto" style="background:var(--card)">إزالة</button>`:""}</div>`:""}
+    <div class="txt">
+      <h1>${editing?T("site.title"):esc(S.site.title).replace("فتي","<em>فتي</em>")}</h1>
+      <div class="sub">${T("site.subtitle")}</div>
+      <p class="motto">${T("site.motto",{area:true})}</p>
+    </div>
+  </div>
+
+  <div class="champs">
+    <div class="champ points">${ICON.medal.replace('<svg','<svg class="medal"')}
+      ${topP?av(topP):`<div class="av">؟</div>`}
+      <div><div class="lbl">الأول في التنافس العام</div><div class="nm">${topP?esc(topP.name):"لم تُسجّل نقاط بعد"}</div>${topP?`<div class="val num">${AR(total(topP))} نقطة</div>`:""}</div>
+    </div>
+    <div class="champ khw">${ICON.medal.replace('<svg','<svg class="medal"')}
+      ${topK?av(topK.m):`<div class="av">🎤</div>`}
+      <div><div class="lbl">الأول في الخواطر</div><div class="nm">${topK?esc(topK.m.name):"بانتظار أول خاطرة"}</div>${topK?`<div class="val num">${AR(topK.avg)} من ١٠ · ${AR(topK.n)} خاطرة</div>`:`<div class="val">تُسجَّل من صفحة الخواطر</div>`}</div>
+    </div>
+  </div>
+
+  <div>
+    ${secH("زاد اليوم", "يتجدد تلقائياً كل يوم · " + new Date().toLocaleDateString("ar-EG",{weekday:"long",day:"numeric",month:"long"}))}
+    <div class="daily" style="margin-top:12px">
+      <div class="dcard" style="--k:var(--rust)"><span class="k">تحدّي اليوم</span><h3>${esc(ch[0])}</h3><p>${esc(ch[1])}</p></div>
+      <div class="dcard" style="--k:var(--plum)"><span class="k">سؤال اليوم لدائرة الحديث</span><h3>${esc(q)}</h3></div>
+      <div class="dcard" style="--k:var(--teal)"><span class="k">مهارة نتدرّب عليها</span><h3>${esc(sk[0])}</h3><p>${esc(sk[1])}</p></div>
+      <div class="dcard" style="--k:var(--mustard)"><span class="k">كلمة اليوم</span><h3>${esc(w[0])}</h3><p>${esc(w[1])}</p></div>
+    </div>
+  </div>
+
+  <div>
+    ${secH("مشرفو المجموعة","", addBtn("addSup","مشرف"))}
+    <div class="people" style="margin-top:12px">
+      ${(S.supervisors||[]).map((s,i)=>`<div class="sup">${av(s)}<b>${T(`supervisors.${i}.name`,{ph:"اسم المشرف"})}</b><small>${T(`supervisors.${i}.role`,{ph:"الدور"})}</small>${editing?`<div class="row" style="justify-content:center">${upBtn(`supervisors.${i}.photo`,"📷 صورة")}${delBtn("supervisors",i)}</div>`:""}</div>`).join("") || `<div class="empty">أضف المشرفين من وضع المشرف</div>`}
+    </div>
+  </div>
+
+  <div>
+    ${secH("شباب تاسع", AR(ms.length) + " مشتركاً")}
+    <div class="mstrip" style="margin-top:12px">${ms.map(m=>`<figure>${av(m)}<figcaption>${esc(m.name)}</figcaption></figure>`).join("")}</div>
+  </div>
+
+  <div>
+    ${secH("لقطات من البرنامج","طلعات، فقرات، ولحظات تستحق التوثيق", addBtn("addShot","لقطة"))}
+    <div class="gallery" style="margin-top:12px">
+      ${(S.gallery||[]).map((g,i)=>`<figure class="shot"><img src="${safeImg(g.url)}" alt="${esc(g.cap)}" loading="lazy"><figcaption>${T(`gallery.${i}.cap`,{ph:"وصف اللقطة"})}${delBtn("gallery",i)}</figcaption></figure>`).join("")}
+      ${(S.gallery||[]).length<3 ? Array.from({length:3-(S.gallery||[]).length}).map(()=>`<div class="shot ph">مكان لقطة من البرنامج<br>تضيفها لجنة الإعلام</div>`).join("") : ""}
+    </div>
+  </div>
+
+  <div>
+    ${secH("أهدافنا خلال العام","", addBtn("addYG","هدف"))}
+    <div class="ygoals" style="margin-top:12px">${(S.site.yearGoals||[]).map((g,i)=>`<div class="yg"><b>${T(`site.yearGoals.${i}.t`)}</b><p>${T(`site.yearGoals.${i}.d`,{area:true})}</p>${delBtn("site.yearGoals",i)}</div>`).join("")}</div>
+  </div>
+
+  <div class="news">
+    ${secH("آخر الأخبار","", addBtn("addNews","خبر"))}
+    ${(S.site.news||[]).length ? `<ul style="margin-top:12px">${S.site.news.map((n,i)=>`<li><time>${editing?`<input type="date" data-bind="site.news.${i}.date" value="${esc(n.date)}" id="f-news-${i}">`:fmtDate(n.date)}</time><span style="flex:1;min-width:0">${T(`site.news.${i}.t`,{area:true})}</span>${delBtn("site.news",i)}</li>`).join("")}</ul>` : `<div class="empty" style="margin-top:12px">لا أخبار بعد</div>`}
+  </div>
+
+  <div>
+    ${secH("من برامج فتي","تذكير بالبرامج التي عشناها ونعيشها", addBtn("addProg","برنامج"))}
+    <div class="progs" style="margin-top:12px">${(S.site.programs||[]).map((p,i)=>`<div class="prog"><b>${T(`site.programs.${i}.name`)}</b><small>${T(`site.programs.${i}.d`)}</small>${delBtn("site.programs",i)}</div>`).join("")}</div>
+  </div>`;
+}
+
+/* ----- POINTS ----- */
+function vPoints(){
+  const rk = ranked(), max = rk.length ? total(rk[0]) : 0;
+  const sum = rk.reduce((s,m)=>s+total(m),0), due = rk.filter(m=>giftState(m)==="due").length;
+  let rank = 0, prev = null;
+  const cards = rk.map((m,i)=>{ const t = total(m); if (t!==prev){ rank=i+1; prev=t; }
+    const gs = giftState(m), into = t % GOAL;
+    const pct = gs==="none" ? t/GOAL : (into/GOAL);
+    return `<div class="pcard ${rank<=3&&t>0?"t"+rank:""}">
+      <span class="rank num">#${AR(rank)}</span>
+      <div class="ringav">${ring(gs==="none"?pct:(into===0?1:pct))}${av(m)}${gs!=="none"?`<div class="gift ${gs}" title="${gs==="due"?"يستحق هدية":"استلم هديته"}">${ICON.gift}</div>`:""}</div>
+      <div class="nm">${esc(m.name)}</div>
+      <div class="pts num">${AR(t)}<small>نقطة</small></div>
+      <span class="status ${gs==="due"?"due":""}">${gs==="due"?"يستحق هدية 🎁":`باقي ${AR(GOAL - into)} للهدية`}</span>
+      <div class="bars" aria-hidden="true">${CATS.map(c=>{const v=Number(catsOf(m)[c.k])||0;return v?`<i style="width:${100*v/Math.max(1,t)}%;background:var(${c.c})" title="${c.label}: ${AR(v)}"></i>`:""}).join("")}</div>
+      <div class="badges">${badgesOf(m,max).map(b=>{const d=BADGE_DEFS.find(x=>x.id===b);return `<span title="${d.t} — ${d.d}" role="img" aria-label="${d.t}">${ICON[b]}</span>`}).join("")}</div>
+    </div>`; }).join("");
+  const manage = editing ? `
+    <div class="panel"><h3 style="margin-bottom:10px">إضافة مشترك</h3><div class="row"><input type="text" id="newMember" placeholder="اسم المشترك"><button class="btn" type="button" data-act="addMember">إضافة</button></div></div>
+    <div class="mlist">${members().map(m=>`<div class="mrow">
+      <div class="mhead">${av(m)}${upBtn(`members.${m.id}.photo`,"📷 صورة")}</div>
+      <div class="mbody">
+        <div class="mtop"><input type="text" data-bind="members.${m.id}.name" value="${esc(m.name)}" id="f-name-${m.id}" style="max-width:240px"><span class="pts num" style="font-size:1.4rem">${AR(total(m))}<small>نقطة</small></span></div>
+        <div class="cats">${CATS.map(c=>`<div class="cat" style="--cc:var(${c.c})"><span class="lbl">${c.label}</span><span class="val num">${AR(catsOf(m)[c.k]||0)}</span><div class="step"><button type="button" data-act="pt" data-m="${m.id}" data-k="${c.k}" data-n="-1" aria-label="ناقص واحد">−١</button><button type="button" class="plus" data-act="pt" data-m="${m.id}" data-k="${c.k}" data-n="1">+١</button><button type="button" class="plus" data-act="pt" data-m="${m.id}" data-k="${c.k}" data-n="5">+٥</button></div></div>`).join("")}</div>
+        <div class="row" style="align-items:center">${giftsEarned(m)?`<span class="note">الهدايا: استحق ${AR(giftsEarned(m))} واستلم ${AR(giftsGiven(m))}</span><button class="btn sm gold" type="button" data-act="gift" data-m="${m.id}" ${giftState(m)!=="due"?"disabled":""}>تم تسليم هدية</button>`:`<span class="note">لم يصل إلى ٤٠ نقطة بعد</span>`}<button class="btn sm del" type="button" data-act="delMember" data-m="${m.id}">حذف المشترك</button></div>
+      </div></div>`).join("")}</div>` : "";
+  return `${secH("لوحة النقاط","كل ٤٠ نقطة = هدية · تتحدّث مباشرة بعد كل لقاء")}
+  <div class="summary"><span><b class="num">${AR(rk.length)}</b> مشترك</span><span><b class="num">${AR(sum)}</b> نقطة للمجموعة</span><span><b class="num">${AR(due)}</b> يستحقون هدية</span></div>
+  <div class="legend">${CATS.map(c=>`<span><i style="background:var(${c.c})"></i>${c.label}</span>`).join("")}${BADGE_DEFS.map(b=>`<span title="${b.d}">${ICON[b.id]}${b.t}</span>`).join("")}</div>
+  ${editing ? manage : `<div class="pgrid">${cards}</div>`}`;
+}
+
+/* ----- KHAWATER ----- */
+let kd = null;
+function newKd(){ return {m: members()[0]?.id || "", title:"", date: today(), scores: Array(10).fill(1)}; }
+function vKhawater(){
+  const kr = kRanking();
+  const none = members().filter(m=>!kr.some(r=>r.m.id===m.id));
+  const pod = [kr[1],kr[0],kr[2]];
+  const podium = kr.length ? `<div class="podium">${pod.map((r,i)=>{ const p=[2,1,3][i]; return r?`<div class="pod p${p}">${av(r.m)}<div class="nm">${esc(r.m.name)}</div><div class="blk"><b class="num">${AR(r.avg)}</b><small>المركز ${AR(p)}</small></div></div>`:`<div class="pod p${p}"></div>`; }).join("")}</div>` : `<div class="empty">لم تُقيَّم أي خاطرة بعد. تُضاف الخواطر من وضع المشرف بنفس بنود «ورقة تقييم الإلقاء».</div>`;
+  if (editing && !kd) kd = newKd();
+  const form = editing ? `<div class="panel kform"><h3 style="margin-bottom:10px">تقييم خاطرة جديدة</h3>
+    <div class="row"><div class="field"><label for="kd-m">المشترك</label><select id="kd-m" data-kd="m">${members().map(m=>`<option value="${m.id}" ${kd.m===m.id?"selected":""}>${esc(m.name)}</option>`).join("")}</select></div>
+    <div class="field"><label for="kd-title">عنوان الخاطرة</label><input type="text" id="kd-title" data-kd="title" value="${esc(kd.title)}"></div>
+    <div class="field"><label for="kd-date">التاريخ</label><input type="date" id="kd-date" data-kd="date" value="${esc(kd.date)}"></div></div>
+    <div style="margin-top:8px">${CRIT.map((c,i)=>`<div class="crit"><span>${AR(i+1)}. ${c[0]} ${c[1]?`<small>(${c[1]})</small>`:""}</span><div class="seg">${[0,.25,.5,.75,1].map(v=>`<button type="button" data-act="kscore" data-i="${i}" data-v="${v}" aria-pressed="${kd.scores[i]===v}">${AR(v)}</button>`).join("")}</div></div>`).join("")}</div>
+    <div class="row" style="margin-top:12px;align-items:center"><b style="font-family:var(--f-display);font-size:1.2rem">المجموع: <span class="num">${AR(kd.scores.reduce((a,b)=>a+b,0))}</span> / ١٠</b><button class="btn" type="button" data-act="addK">إضافة الخاطرة</button></div></div>
+    <div class="panel"><h3 style="margin-bottom:10px">الخواطر المسجّلة</h3><div class="klist">${(S.khawater||[]).slice().reverse().map(k=>{const i=S.khawater.indexOf(k);const m=mById(k.m);return `<div class="kitem"><span><b>${esc(m?m.name:"—")}</b> · ${esc(k.title||"بدون عنوان")} · ${fmtDate(k.date)}</span><span class="num"><b>${AR(kScore(k))}</b> / ١٠ ${delBtn("khawater",i)}</span></div>`}).join("") || `<span class="note">لا شيء بعد</span>`}</div></div>` : "";
+  return `${secH("ترتيب الخواطر","خواطر من الخاطر · الترتيب حسب متوسط الدرجة من ١٠، ثم عدد الخواطر")}
+  ${podium}
+  ${kr.length?`<div class="panel scroll-x"><table class="ktable"><thead><tr><th>#</th><th>المشترك</th><th>المتوسط</th><th></th><th>أفضل خاطرة</th><th>العدد</th></tr></thead><tbody>
+    ${kr.map((r,i)=>`<tr><td class="num">${AR(i+1)}</td><td><span class="who">${av(r.m)}${esc(r.m.name)}</span></td><td class="num"><b>${AR(r.avg)}</b></td><td style="width:30%"><div class="meter"><i style="width:${r.avg*10}%"></i></div></td><td class="num">${AR(r.best)}</td><td class="num">${AR(r.n)}</td></tr>`).join("")}
+    ${none.map(m=>`<tr><td>—</td><td><span class="who">${av(m)}${esc(m.name)}</span></td><td colspan="4" class="muted">لم يُلقِ خاطرة بعد</td></tr>`).join("")}
+  </tbody></table></div>`:""}
+  ${form}`;
+}
+
+/* ----- GOALS ----- */
+function vGoals(){
+  const gs = S.goals||[];
+  const defs = editing ? `<div class="panel"><h3 style="margin-bottom:10px">الأهداف</h3><div class="gdefs">${gs.map((g,i)=>`<div class="gdef"><input type="text" data-bind="goals.${i}.t" value="${esc(g.t)}" id="f-g-${g.id}" placeholder="الهدف"><input type="text" data-bind="goals.${i}.d" value="${esc(g.d||"")}" id="f-gd-${g.id}" placeholder="كيف نقيسه؟">${delBtn("goals",i)}</div>`).join("")}</div>
+    <div class="row" style="margin-top:10px"><input type="text" id="newGoal" placeholder="هدف جديد، مثال: حفظ جزء عمّ"><input type="text" id="newGoalD" placeholder="كيف نقيسه؟"><button class="btn" type="button" data-act="addGoal">إضافة الهدف</button></div></div>` : "";
+  const avg = members().length ? members().reduce((s,m)=>s+mGoalPct(m.id),0)/members().length : 0;
+  const cards = members().slice().sort((a,b)=>mGoalPct(b.id)-mGoalPct(a.id)).map(m=>{ const p = Math.round(mGoalPct(m.id)); const r=25, C=2*Math.PI*r;
+    return `<div class="gcard"><div class="gtop">${av(m)}<div><b>${esc(m.name)}</b><span class="note">${AR(gs.filter(g=>prog(m.id,g.id)>=100).length)} من ${AR(gs.length)} أهداف مكتملة</span></div>
+      <div class="donut"><svg viewBox="0 0 58 58"><circle class="bgc" cx="29" cy="29" r="${r}"/><circle class="fg" cx="29" cy="29" r="${r}" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-p/100)}"/></svg><span class="num">${AR(p)}٪</span></div></div>
+      <div class="glist">${gs.map(g=>{const v=prog(m.id,g.id);return `<div class="gl"><div class="t"><span>${esc(g.t)}</span><span>${AR(v)}٪</span></div><div class="gbar"><i class="${v>=100?"full":""}" style="width:${v}%"></i></div>${editing?`<div class="gseg">${[0,25,50,75,100].map(x=>`<button type="button" data-act="prog" data-m="${m.id}" data-g="${g.id}" data-v="${x}" aria-pressed="${v===x}">${AR(x)}٪</button>`).join("")}</div>`:""}</div>`}).join("")}</div></div>`; }).join("");
+  return `${secH("أهداف المشتركين","كل شاب يرى مدى إنجازه في الأهداف المحددة · متوسط المجموعة " + AR(Math.round(avg)) + "٪")}
+  ${defs}
+  ${gs.length?`<div class="ggrid">${cards}</div>`:`<div class="empty">لا توجد أهداف بعد. يضيفها المشرف من وضع المشرف.</div>`}`;
+}
+
+/* ----- COMMITTEES ----- */
+function vCommittees(){
+  const cs = S.committees||[];
+  const cmp = `<div class="panel"><h3 style="margin-bottom:12px">نسبة الإنجاز بين اللجان</h3><div class="compare">${cs.slice().sort((a,b)=>cPct(b)-cPct(a)).map(c=>`<div class="cmpr"><span>${esc(c.name.replace("لجنة ",""))}</span><div class="track"><i style="width:${cPct(c)}%;background:var(${COLORS[c.color]||"--band-teal"})"></i></div><b>${AR(cPct(c))}٪</b></div>`).join("")}</div><p class="note" style="margin-top:10px">النسبة = المهام المنجزة ÷ كل مهام اللجنة</p></div>`;
+  const blocks = cs.map((c,ci)=>{ const pct=cPct(c); const others = members().filter(m=>!(c.members||[]).includes(m.id));
+    return `<article class="comm" style="--b:var(${COLORS[c.color]||"--band-teal"})">
+      <div class="ico" aria-hidden="true">${esc(c.icon)}</div>
+      <div class="cbody">
+        <h3>${T(`committees.${ci}.name`)}</h3>
+        <p class="desc">${T(`committees.${ci}.desc`,{area:true})}</p>
+        <div class="pills">${(c.members||[]).map((id,i)=>{const m=mById(id); if(!m) return ""; return `<span class="pill ${ (c.newMembers||[]).includes(id)?"new":""}">${av(m)}${esc(m.name)}${editing?`<button type="button" data-act="del" data-path="committees.${ci}.members" data-i="${i}" aria-label="إزالة">×</button>`:""}</span>`}).join("")}
+          ${editing&&others.length?`<select data-act-change="addCM" data-c="${ci}" id="f-cm-${ci}" style="width:auto"><option value="">＋ إضافة عضو</option>${others.map(m=>`<option value="${m.id}">${esc(m.name)}</option>`).join("")}</select>`:""}</div>
+        <div class="cbox"><h4><span>المهام</span><span class="pct num">${AR(pct)}٪</span></h4><div class="cbar"><i style="width:${pct}%"></i></div>
+          <ul class="tasks">${(c.tasks||[]).map((t,ti)=>`<li class="${t.done?"done":""}"><button class="tick" type="button" ${editing?`data-act="task" data-c="${ci}" data-t="${ti}"`:"tabindex='-1'"} aria-label="${t.done?"منجزة":"غير منجزة"}">${t.done?"✓":""}</button><span>${editing?`<input type="text" data-bind="committees.${ci}.tasks.${ti}.t" value="${esc(t.t)}" id="f-t-${ci}-${ti}">`:esc(t.t)}</span>${delBtn(`committees.${ci}.tasks`,ti,"×")}</li>`).join("") || `<li class="note" style="color:inherit;opacity:.8">لا مهام بعد</li>`}</ul>
+          ${editing?`<div class="row"><input type="text" id="nt-${ci}" placeholder="مهمة جديدة"><button class="btn sm ghost" type="button" data-act="addTask" data-c="${ci}">إضافة</button></div>`:""}</div>
+        <div class="cbox"><h4><span>إنجازات اللجنة</span><span class="num" style="font-size:.85rem">${AR((c.wins||[]).length)}</span></h4>
+          <div class="wins">${(c.wins||[]).map((w,wi)=>`<div class="win">${safeImg(w.img)?`<img src="${safeImg(w.img)}" alt="" loading="lazy">`:""}<div><time>${fmtDate(w.date)}</time>${T(`committees.${ci}.wins.${wi}.t`,{area:true})}${editing?`<div class="row">${upBtn(`committees.${ci}.wins.${wi}.img`,"📷")}${delBtn(`committees.${ci}.wins`,wi)}</div>`:""}</div></div>`).join("")}
+            ${(c.wins||[]).length<2?Array.from({length:2-(c.wins||[]).length}).map(()=>`<div class="win ph">مكان لإنجاز قادم ✦</div>`).join(""):""}</div>
+          ${editing?`<div class="row"><input type="text" id="nw-${ci}" placeholder="إنجاز جديد"><button class="btn sm ghost" type="button" data-act="addWin" data-c="${ci}">إضافة</button></div>`:""}</div>
+      </div></article>`; }).join("");
+  return `${secH("تقسيمة اللجان","لكل مشكلة لجنة… ولكل لجنة إنجاز")}${cmp}${blocks}`;
+}
+
+/* ----- LIBRARY ----- */
+let libFilter = "all";
+const LIBCAT = {self:"تطوير الذات", seerah:"سيرة وقدوات", iman:"إيمانيات", novel:"روايات هادفة", lead:"قيادة", podcast:"بودكاست وسلاسل"};
+const LIBCOL = {self:"--band-teal", seerah:"--band-mustard", iman:"--band-plum", novel:"--band-rust", lead:"--ink", podcast:"--band-plum"};
+function vLibrary(){
+  const items = (S.library||[]).filter(b=>libFilter==="all"||b.cat===libFilter);
+  const feat = S.featured||{};
+  return `${secH("مكتبة فتي","كتب وبودكاست تنمّي ابن الرابعة عشرة: قيم إسلامية، عقل ناضج، وهمّة عالية")}
+  <div class="lib-feature"><span class="eyebrow" style="color:#FFE9B8">كاتب نتابعه</span><h3>${T("featured.name")}</h3><p>${T("featured.d",{area:true})}</p>
+    ${(feat.works||[]).length?`<div class="pills">${feat.works.map((w,i)=>`<span class="pill" style="padding:4px 12px">${editing?`<input type="text" data-bind="featured.works.${i}" value="${esc(w)}" id="f-fw-${i}" style="width:160px">`:esc(w)}${editing?`<button type="button" data-act="del" data-path="featured.works" data-i="${i}" aria-label="إزالة">×</button>`:""}</span>`).join("")}</div>`:`<p style="opacity:.8;font-size:.88rem">أضف عناوين رواياته من وضع المشرف.</p>`}
+    ${editing?`<div class="row"><input type="text" id="newWork" placeholder="عنوان رواية"><button class="btn sm ghost" type="button" data-act="addWork" style="background:rgba(255,255,255,.18);color:var(--on-band)">إضافة</button></div>`:""}
+  </div>
+  <div class="filters" role="group" aria-label="تصنيف">${[["all","الكل"],...Object.entries(LIBCAT)].map(([k,l])=>`<button type="button" data-act="libf" data-k="${k}" aria-pressed="${libFilter===k}">${l}</button>`).join("")}</div>
+  ${editing?`<div class="panel"><h3 style="margin-bottom:10px">إضافة إلى المكتبة</h3><div class="row"><select id="nl-cat">${Object.entries(LIBCAT).map(([k,l])=>`<option value="${k}">${l}</option>`).join("")}</select><input type="text" id="nl-t" placeholder="العنوان"><input type="text" id="nl-by" placeholder="المؤلف أو المقدّم"></div><div class="row" style="margin-top:8px"><input type="text" id="nl-why" placeholder="لماذا نرشّحه؟"><button class="btn" type="button" data-act="addLib">إضافة</button></div></div>`:""}
+  <div class="lgrid">${items.map(b=>{const i=S.library.indexOf(b); const isPod=b.cat==="podcast"; return `<div class="book"><div class="spine ${isPod?"pod":""}" style="--sc:var(${LIBCOL[b.cat]||"--band-teal"})">${isPod?"🎧":esc(initial(b.t))}</div><div style="min-width:0"><b>${T(`library.${i}.t`)}</b><span class="by">${T(`library.${i}.by`)}</span><p>${T(`library.${i}.why`,{area:true})}</p><div class="tags"><span class="chip">${LIBCAT[b.cat]||""}</span></div>${delBtn("library",i)}</div></div>`}).join("") || `<div class="empty">لا عناصر في هذا التصنيف</div>`}</div>
+  <p class="note">اختيارات المكتبة مرشّحة لعمر ١٤ سنة. ننصح أن يطّلع المشرف على أي حلقة أو كتاب جديد قبل نشره للمجموعة.</p>`;
+}
+
+/* ----- VISION ----- */
+function vVision(){
+  return `<div class="vhero"><span class="eyebrow">نظام الإشراف · نادي فتي</span><h2>نقطة تحوّل</h2><p style="font:700 1.2rem var(--f-display)">من لاعب في الفريق… إلى قائد يصنع الفريق</p><p class="ayah">﴿إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ﴾</p><small>سورة الرعد · الآية ١١</small></div>
+  <div>${secH("خطة المباراة","البطولة تبدأ بخطة: أربعة أشواط للموسم")}
+  <div class="halves" style="margin-top:12px">
+    <div class="half" style="--b:var(--band-teal)"><span class="n">١</span><b>نعرف اللاعب</b><p>مهارات ابن الرابعة عشرة، وكيف نحفّزه عملياً</p></div>
+    <div class="half" style="--b:var(--band-mustard)"><span class="n">٢</span><b>نصنع القائد</b><p>الإشراف، صناعة البرامج، واحترام المسؤول</p></div>
+    <div class="half" style="--b:var(--band-rust)"><span class="n">٣</span><b>أرض الملعب</b><p>تكاليف القروب، الطلعات، التحديات، وأسئلة الترابط</p></div>
+    <div class="half" style="--b:var(--band-plum)"><span class="n">٤</span><b>صافرة الفوز</b><p>التنافس والتقييم، اللجان، وتطوير الفريق</p></div>
+  </div></div>
+  <div>${secH("مهارات يحتاجها ابن الـ١٤","في هذا العمر تنشط مراكز الانفعال أسرع من مراكز التخطيط وضبط النفس؛ لذلك تُبنى المهارات بالتدريب والتكرار، لا بالمحاضرة")}
+  <div class="skills" style="margin-top:12px">${DAILY.skill.map(s=>`<div class="skill"><b>${s[0]}</b><p>${s[1]}</p></div>`).join("")}</div></div>
+  <div class="panel" style="display:flex;flex-direction:column;gap:14px"><h3>معادلة الدافع الداخلي</h3>
+    <div class="equation"><span>استقلالية</span><i>+</i><span>إنجاز</span><i>+</i><span>انتماء</span></div>
+    <p class="muted" style="text-align:center">حين يشعر أنه يختار، وينجح، وينتمي… يتحرك من نفسه دون ملاحقة <small>(نظرية تقرير الذات، ديسي ورايان)</small></p>
+    <ol class="tips"><li>خيّره ولا تأمره: مهمتان يختار بينهما، فيتحمّل مسؤولية اختياره</li><li>امدح الجهد بالتحديد: «تجهيزك المبكر رفع الفريق» بدل «شاطر»</li><li>مدح أمام الجميع، ونصيحة على انفراد</li><li>تحدٍّ أعلى قليلاً من قدرته: لا سهل يُملّ، ولا صعب يُحبط</li><li>لقب ودور حقيقي: «مسؤول الأدوات» يلتزم أكثر من «عضو»</li><li>إنجاز يُرى: نقاط، لوحة شرف، ونجم الأسبوع</li></ol>
+  </div>
+  <div>${secH("أفكارنا للموسم","")}
+  <div class="ideas" style="margin-top:12px">
+    <div class="panel"><h3>البرنامج الحركي القيمي</h3><ul><li><b>القيمة:</b> ماذا نريدهم أن يتعلّموا؟ ثقة، صبر، إيثار</li><li><b>الحركة:</b> لعبة يعيش فيها الشاب القيمة بجسده</li><li><b>الربط:</b> آية أو حديث أو قصة تُسقط المعنى</li><li><b>الختام:</b> سؤال تأمّل والتزام عملي صغير</li></ul></div>
+    <div class="panel"><h3>طلعات سريعة</h3><ul><li>رحلة بحرية · كشتة برية · دوري كرة مصغّر</li><li>يوم بلا جوال · طبخ جماعي · فطور بعد الفجر</li><li>زيارة كبار السن · تنظيف مسجد الحي</li><li>مسير ١٠ آلاف خطوة · رياضة جماعية</li></ul></div>
+    <div class="panel"><h3>أهداف تعبّدية جماعية</h3><ul><li>أذكار الصباح والمساء</li><li>الفجر في المسجد</li><li>ختمة موزّعة على الفريق</li><li>صيام الاثنين معاً · الوتر كل ليلة لمدة أسبوع</li></ul></div>
+    <div class="panel"><h3>الطلعة النجمة: حديث أبي بكر</h3><p class="muted" style="font-size:.9rem">«من أصبح منكم اليوم صائماً؟ من تبع جنازة؟ من أطعم مسكيناً؟ من عاد مريضاً؟» فكان أبو بكر يقول في كلٍّ منها: أنا (رواه مسلم). هدف الفريق: نجمع أكبر عدد من هذه الأعمال في يوم واحد.</p></div>
+  </div></div>
+  <div class="panel scroll-x"><h3 style="margin-bottom:8px">لوحة النتائج</h3><table class="score"><thead><tr><th>المعيار</th><th>كيف نقيسه؟</th><th>النقاط</th></tr></thead><tbody>
+    <tr><td>الحضور المبكر</td><td>الوصول قبل الموعد بـ١٠ دقائق</td><td>+١٠</td></tr><tr><td>التجهيز المسبق</td><td>الأدوات والفقرة جاهزة قبل اللقاء</td><td>+١٠</td></tr>
+    <tr><td>الحماس</td><td>المشاركة والتشجيع طوال البرنامج</td><td>+٥</td></tr><tr><td>التنافس بوعي</td><td>روح رياضية واحترام المنافس (وخصم ١٠ عند الإساءة)</td><td>+٥</td></tr>
+    <tr><td>تفعيل الفريق</td><td>إشراك كل الأعضاء دون استثناء</td><td>+١٠</td></tr><tr><td>مبادرة فردية</td><td>فكرة أو خدمة بادر بها وحده</td><td>+١٥</td></tr><tr><td>مبادرة جماعية</td><td>مشروع نفّذه الفريق كاملاً</td><td>+٢٠</td></tr>
+  </tbody></table></div>
+  <div>${secH("كيف نطوّر الفريق؟","")}
+  <div class="cycle" style="margin-top:12px"><div><b>خطّط</b><p>هدف شهري واضح يعرفه كل عضو</p></div><div><b>نفّذ</b><p>لكل عضو دور ومسؤولية محددة</p></div><div><b>راجِع</b><p>١٠ دقائق بعد كل لقاء: ماذا نجح؟ وماذا نحسّن؟</p></div><div><b>طوّر</b><p>درّب، دوّر الأدوار، واحتفل بالإنجاز</p></div></div></div>
+  <div class="oath"><span class="eyebrow" style="color:#FFE9B8">الآن… أنت نقطة التحوّل</span><h3>عهد الفريق</h3><div class="pills"><span class="pill" style="padding:6px 16px">نحضر مبكراً</span><span class="pill" style="padding:6px 16px">نجهّز مسبقاً</span><span class="pill" style="padding:6px 16px">نتعاون بإخلاص</span><span class="pill" style="padding:6px 16px">نبادر دون انتظار</span></div><p>﴿وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ﴾ المائدة ٢</p></div>`;
+}
+
+/* ================= EVENTS ================= */
+document.addEventListener("input", e=>{
+  const b = e.target.closest("[data-bind]");
+  if (b && editing){ setPath(b.dataset.bind, b.value); markDirty(); return; }
+  const k = e.target.closest("[data-kd]");
+  if (k && kd){ kd[k.dataset.kd] = k.value; }
+});
+document.addEventListener("change", e=>{
+  const k = e.target.closest("[data-kd]"); if (k && kd){ kd[k.dataset.kd] = k.value; }
+  const s = e.target.closest("[data-act-change='addCM']");
+  if (s && s.value){ const c = S.committees[+s.dataset.c]; (c.members ||= []).push(s.value); markDirty(); render(); }
+});
+let uploadTarget = null;
+document.addEventListener("click", e=>{
+  const b = e.target.closest("[data-act]"); if (!b) return;
+  const a = b.dataset.act;
+  const val = id => (document.getElementById(id)?.value||"").trim();
+  switch(a){
+    case "libf": libFilter = b.dataset.k; render(); return;
+  }
+  if (!editing) return;
+  switch(a){
+    case "del": { const arr = getPath(b.dataset.path); if (Array.isArray(arr)) arr.splice(+b.dataset.i,1); break; }
+    case "clear": setPath(b.dataset.path, ""); break;
+    case "upload": uploadTarget = b.dataset.target; $("#ufile").value=""; $("#ufile").click(); return;
+    case "addSup": (S.supervisors ||= []).push({name:"",role:"مشرف",photo:""}); break;
+    case "addShot": uploadTarget = "__gallery"; $("#ufile").value=""; $("#ufile").click(); return;
+    case "addYG": S.site.yearGoals.push({t:"هدف جديد",d:""}); break;
+    case "addNews": (S.site.news ||= []).unshift({date:today(),t:""}); break;
+    case "addProg": S.site.programs.push({name:"برنامج",d:""}); break;
+    case "pt": { const m=S.members[b.dataset.m]; m.cats ||= {}; m.cats[b.dataset.k] = Math.max(0,(Number(m.cats[b.dataset.k])||0)+Number(b.dataset.n)); break; }
+    case "gift": { const m=S.members[b.dataset.m]; m.giftsGiven = (Number(m.giftsGiven)||0)+1; toast("سُجّل تسليم الهدية"); break; }
+    case "addMember": { const n=val("newMember"); if(!n) return toast("اكتب اسم المشترك"); const ord=Math.max(0,...Object.values(S.members).map(m=>m.order||0))+1; S.members[uid("m")] = {name:n,order:ord,cats:{},giftsGiven:0,photo:""}; break; }
+    case "delMember": { if (b.dataset.sure!=="1"){ b.dataset.sure="1"; b.textContent="اضغط مرة ثانية للتأكيد"; return; } const id=b.dataset.m; delete S.members[id]; S.committees.forEach(c=>c.members=(c.members||[]).filter(x=>x!==id)); break; }
+    case "kscore": kd.scores[+b.dataset.i] = Number(b.dataset.v); render(); return;
+    case "addK": { if(!kd.m) return toast("اختر المشترك"); (S.khawater ||= []).push({id:uid("k"), m:kd.m, title:kd.title.trim(), date:kd.date, scores:kd.scores.slice()}); toast("أُضيفت الخاطرة"); kd = newKd(); break; }
+    case "addGoal": { const t=val("newGoal"); if(!t) return toast("اكتب الهدف"); (S.goals ||= []).push({id:uid("g"), t, d:val("newGoalD")}); break; }
+    case "prog": { S.progress ||= {}; (S.progress[b.dataset.m] ||= {})[b.dataset.g] = Number(b.dataset.v); break; }
+    case "task": { const t=S.committees[+b.dataset.c].tasks[+b.dataset.t]; t.done=!t.done; break; }
+    case "addTask": { const t=val("nt-"+b.dataset.c); if(!t) return; (S.committees[+b.dataset.c].tasks ||= []).push({t,done:false}); break; }
+    case "addWin": { const t=val("nw-"+b.dataset.c); if(!t) return; (S.committees[+b.dataset.c].wins ||= []).push({t,date:today(),img:""}); break; }
+    case "addWork": { const t=val("newWork"); if(!t) return; (S.featured.works ||= []).push(t); break; }
+    case "addLib": { const t=val("nl-t"); if(!t) return toast("اكتب العنوان"); S.library.push({cat:val("nl-cat")||"self", t, by:val("nl-by"), why:val("nl-why")}); break; }
+    default: return;
+  }
+  markDirty(); render();
+});
+/* Image upload → resized JPEG data URI stored in the page */
+$("#ufile").addEventListener("change", async e=>{
+  const f = e.target.files && e.target.files[0]; if (!f || !uploadTarget) return;
+  try{
+    const isAvatar = /photo$/.test(uploadTarget);
+    const url = await shrink(f, isAvatar ? 420 : 1100, isAvatar ? .8 : .72);
+    if (uploadTarget==="__gallery") (S.gallery ||= []).push({url, cap:""});
+    else setPath(uploadTarget, url);
+    markDirty(); render(); toast("أُضيفت الصورة. احفظ لتظهر للجميع");
+  }catch(_){ toast("تعذّرت قراءة الصورة. جرّب صورة JPG أو PNG"); }
+});
+function shrink(file, maxSide, q){
+  return new Promise((res,rej)=>{
+    const img = new Image(), u = URL.createObjectURL(file);
+    img.onload = ()=>{ const s = Math.min(1, maxSide/Math.max(img.width,img.height)); const c=document.createElement("canvas"); c.width=Math.round(img.width*s); c.height=Math.round(img.height*s); c.getContext("2d").drawImage(img,0,0,c.width,c.height); URL.revokeObjectURL(u); res(c.toDataURL("image/jpeg", q)); };
+    img.onerror = ()=>{ URL.revokeObjectURL(u); rej(); };
+    img.src = u;
+  });
+}
+
+/* ================= EDIT MODE + SAVE ================= */
+function updateBar(){
+  $("#editbar").hidden = !editing;
+  $("#editMsg").textContent = dirty ? "لديك تعديلات غير محفوظة" : "وضع المشرف: عدّل ثم اضغط «حفظ ونشر» ليظهر التحديث لكل من يفتح الرابط";
+  $("#saveBtn").disabled = !dirty || saving;
+  $("#editBtn").textContent = editing ? "✓ إنهاء التعديل" : "✎ المشرف";
+}
+$("#editBtn").addEventListener("click", ()=>{
+  if (editing && dirty){ toast("احفظ أو ألغِ التعديلات أولاً"); return; }
+  if (!editing && !(gh.token && gh.repo)){ openLogin(); return; }
+  editing = !editing; kd = null; updateBar(); render();
+});
+$("#discardBtn").addEventListener("click", ()=>{ S = JSON.parse(ORIGINAL); dirty = false; editing = false; kd = null; updateBar(); render(); toast("أُلغيت التعديلات"); });
+/* ---- Save to GitHub: images become files in images/, data goes to data.json ---- */
+const b64 = bytes => { let s=""; const CH=0x8000; for(let i=0;i<bytes.length;i+=CH) s+=String.fromCharCode.apply(null, bytes.subarray(i,i+CH)); return btoa(s); };
+async function ghReq(path, opts={}){
+  const r = await fetch(`https://api.github.com/repos/${gh.repo}/contents/${path}`, {...opts, headers:{"Authorization":"Bearer "+gh.token, "Accept":"application/vnd.github+json", ...(opts.headers||{})}});
+  if (r.status===404 && (!opts.method || opts.method==="GET")) return null;
+  if (!r.ok){ const e = new Error("gh"); e.status = r.status; throw e; }
+  return r.json();
+}
+async function ghPut(path, base64, message){
+  const cur = await ghReq(path + "?t=" + Date.now());
+  return ghReq(path, {method:"PUT", body: JSON.stringify({message, content: base64, ...(cur&&cur.sha?{sha:cur.sha}:{})})});
+}
+async function uploadPendingImages(){
+  const jobs = [];
+  (function walk(o){ if (!o || typeof o!=="object") return; for (const k of Object.keys(o)){ const v=o[k]; if (typeof v==="string" && v.startsWith("data:image/")) jobs.push([o,k,v]); else walk(v); } })(S);
+  let n = 0;
+  for (const [o,k,v] of jobs){
+    n++; $("#saveBtn").textContent = `رفع الصور ${AR(n)}/${AR(jobs.length)}…`;
+    const path = "images/" + uid("p") + ".jpg";
+    await ghPut(path, v.split(",")[1], "صورة جديدة");
+    o[k] = path;
+  }
+}
+$("#saveBtn").addEventListener("click", async ()=>{
+  if (!gh.token || !gh.repo){ openLogin(); return; }
+  saving = true; updateBar(); $("#saveBtn").textContent = "جارٍ الحفظ…";
+  try{
+    await uploadPendingImages();
+    S.savedAt = Date.now();
+    const bytes = new TextEncoder().encode(JSON.stringify(S));
+    $("#saveBtn").textContent = "حفظ البيانات…";
+    await ghPut("data.json", b64(bytes), "تحديث المنصة " + new Date().toLocaleString("ar-EG"));
+    dirty = false; render(); toast("حُفظ ✓ يظهر للجميع خلال دقيقة أو دقيقتين");
+  }catch(err){
+    const s = err && err.status;
+    if (s===401||s===403) toast("مفتاح GitHub غير صالح أو بلا صلاحية كتابة. أعد الدخول");
+    else if (s===404) toast("لم يُعثر على المستودع. تأكد من الاسم بصيغة user/repo");
+    else if (s===409) toast("تعارض في الحفظ. حدّث الصفحة وأعد المحاولة");
+    else toast("تعذّر الحفظ. تحقق من الاتصال وحاول مرة أخرى");
+  }
+  saving = false; $("#saveBtn").textContent = "حفظ ونشر"; updateBar();
+});
+
+/* ---- Admin login (GitHub token kept only on this device) ---- */
+function openLogin(){ $("#login").hidden = false; $("#lg-repo").value = gh.repo || guessRepo(); $("#lg-token").value = ""; $("#lg-token").focus(); }
+function guessRepo(){ const m = location.hostname.match(/^([\w-]+)\.github\.io$/); const seg = location.pathname.split("/").filter(Boolean)[0]; return m ? (m[1] + "/" + (seg || (m[1]+".github.io"))) : ""; }
+$("#lg-cancel").addEventListener("click", ()=>{ $("#login").hidden = true; });
+$("#lg-form").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const repo = $("#lg-repo").value.trim().replace(/^https:\/\/github\.com\//,"").replace(/\/$/,""), token = $("#lg-token").value.trim();
+  if (!/^[\w.-]+\/[\w.-]+$/.test(repo) || !token){ $("#lg-err").textContent = "اكتب اسم المستودع بصيغة user/repo والمفتاح"; return; }
+  $("#lg-err").textContent = "جارٍ التحقق…";
+  try{
+    const r = await fetch(`https://api.github.com/repos/${repo}`, {headers:{"Authorization":"Bearer "+token, "Accept":"application/vnd.github+json"}});
+    if (!r.ok) throw r.status;
+    const j = await r.json();
+    if (j.permissions && !j.permissions.push) throw 403;
+    gh.repo = repo; gh.token = token;
+    try{ localStorage.setItem(GH_KEY, JSON.stringify(gh)); }catch(_){}
+    $("#login").hidden = true; editing = true; updateBar(); render(); toast("أهلاً بالمشرف ✎");
+  }catch(s){ $("#lg-err").textContent = s===404 ? "المستودع غير موجود أو المفتاح لا يصل إليه" : "المفتاح غير صالح أو بلا صلاحية كتابة"; }
+});
+$("#logoutBtn").addEventListener("click", ()=>{ if (dirty){ toast("احفظ أو ألغِ التعديلات أولاً"); return; } try{ localStorage.removeItem(GH_KEY); }catch(_){} gh.token = gh.repo = undefined; editing = false; updateBar(); render(); toast("خرجت من وضع المشرف على هذا الجهاز"); });
+
+window.addEventListener("hashchange", ()=>{ render(); window.scrollTo({top:0}); });
+render();
+
+/* Admin button: shown always (small); entering needs a GitHub key. ?admin in the link is not required. */
+$("#editBtn").hidden = false;
+}
+</script>
+</body>
+</html>
