@@ -9,7 +9,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&amp;family=Reem+Kufi:wght@500;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap">
 <style>
 /* Layout: a printed-poster look from فتي's own committee sheet. Paper ground, deep-teal ink, four committee bands (teal, mustard, rust, plum). Sticky header with a scrolling tab strip, then one section per tab. */
 :root{
@@ -19,8 +19,8 @@
   --c-move:#D9563A; --c-early:#2F8F66; --c-init:#6E4FC4; --c-task:#1F72B8; --c-cult:#B8457A;
   --ok:#2F8F66; --danger:#B33A3A;
   --shadow:0 1px 2px rgba(14,58,59,.06),0 8px 22px rgba(14,58,59,.08);
-  --f-wordmark:"Lalezar","Reem Kufi",system-ui,sans-serif;
-  --f-display:"Reem Kufi","IBM Plex Sans Arabic",system-ui,sans-serif;
+  --f-wordmark:"Tajawal","IBM Plex Sans Arabic",system-ui,sans-serif;
+  --f-display:"Tajawal","IBM Plex Sans Arabic",system-ui,sans-serif;
   --f-body:"IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
@@ -53,7 +53,7 @@ img{max-width:100%}
 header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .top .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px 4px}
 .brand{display:flex;align-items:baseline;gap:10px;min-width:0}
-.wordmark{font-family:var(--f-wordmark);font-size:2rem;line-height:1;color:var(--gold)}
+.wordmark{font-family:var(--f-wordmark);font-weight:800;font-size:2rem;line-height:1;color:var(--gold)}
 .brand span{font:700 1rem var(--f-display);color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tools{display:flex;gap:6px;align-items:center}
 nav.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-block:6px 10px;margin-inline:-4px}
@@ -105,7 +105,7 @@ body.editing .viewonly{display:none}
 .hero .collage div{background-size:cover;background-position:center;min-height:0}
 .hero .shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,24,25,.92) 8%,rgba(6,24,25,.35) 60%,rgba(6,24,25,.15))}
 .hero .txt{position:relative;align-self:end;padding:26px 24px 24px;display:flex;flex-direction:column;gap:6px}
-.hero h1{font-family:var(--f-wordmark);font-weight:400;font-size:clamp(2.6rem,8vw,4.6rem);line-height:1.05;letter-spacing:0}
+.hero h1{font-family:var(--f-wordmark);font-weight:800;font-size:clamp(2.6rem,8vw,4.6rem);line-height:1.05;letter-spacing:0}
 .hero h1 em{font-style:normal;color:#F2C14E}
 .hero .sub{font:700 clamp(1.1rem,3.2vw,1.5rem) var(--f-display);color:#FFE9B8}
 .hero .motto{max-width:60ch;opacity:.92}
@@ -222,7 +222,7 @@ body.editing .viewonly{display:none}
 .scroll-x{overflow-x:auto}
 .kform .crit{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:7px 0;border-bottom:1px dashed var(--line)}
 .kform .crit span{font-size:.88rem;font-weight:600}
-.kform .crit small{color:var(--muted);font-weight:400}
+.kform .crit small{color:var(--muted);font-weight:800}
 .seg{display:flex;gap:3px;direction:ltr}
 .seg button{border:0;border-radius:8px;padding:5px 8px;font:600 .78rem var(--f-body);background:var(--card-2);color:var(--ink);cursor:pointer;min-width:40px}
 .seg button[aria-pressed="true"]{background:var(--plum);color:#fff}
@@ -261,7 +261,7 @@ body.editing .viewonly{display:none}
 .cmpr b{font-family:var(--f-display);text-align:end;font-variant-numeric:tabular-nums}
 .comm{border-radius:24px;background:var(--b);color:var(--on-band);padding:20px;display:grid;grid-template-columns:118px 1fr;gap:18px;align-items:start}
 .comm .ico{width:118px;height:118px;border-radius:50%;background:var(--paper);box-shadow:0 0 0 3px var(--b),0 0 0 6px var(--on-band);display:grid;place-items:center;font-size:3.2rem}
-.comm h3{font-family:var(--f-wordmark);font-weight:400;font-size:2rem;line-height:1.15}
+.comm h3{font-family:var(--f-wordmark);font-weight:800;font-size:2rem;line-height:1.15}
 .comm .desc{opacity:.95}
 .comm .cbody{display:flex;flex-direction:column;gap:14px;min-width:0}
 .pills{display:flex;flex-wrap:wrap;gap:8px}
@@ -292,7 +292,8 @@ body.editing .tick{cursor:pointer}
 
 /* LIBRARY */
 .lib-feature{border-radius:22px;background:var(--band-plum);color:var(--on-band);padding:20px;display:flex;flex-direction:column;gap:8px}
-.lib-feature h3{font-family:var(--f-wordmark);font-weight:400;font-size:1.8rem}
+.lib-feature h3{font-family:var(--f-wordmark);font-weight:800;font-size:1.8rem}
+.book a.btn{text-decoration:none}
 .lgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
 .book{background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:14px;display:grid;grid-template-columns:54px 1fr;gap:12px;align-items:start;min-width:0}
 .spine{width:54px;height:76px;border-radius:4px 8px 8px 4px;background:var(--sc);color:#fff;display:grid;place-items:center;font:700 1.4rem var(--f-wordmark);box-shadow:inset 6px 0 0 rgba(0,0,0,.18)}
@@ -307,12 +308,12 @@ body.editing .tick{cursor:pointer}
 
 /* VISION (نقطة تحوّل) */
 .vhero{border-radius:26px;background:var(--ink);color:var(--paper);padding:30px 24px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
-.vhero h2{font-family:var(--f-wordmark);font-weight:400;font-size:clamp(2.4rem,7vw,3.8rem);line-height:1.05;color:#F2C14E}
+.vhero h2{font-family:var(--f-wordmark);font-weight:800;font-size:clamp(2.4rem,7vw,3.8rem);line-height:1.05;color:#F2C14E}
 .vhero .ayah{font:600 1.15rem var(--f-display);opacity:.95}
 .vhero small{opacity:.7}
 .halves{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
 .half{border-radius:18px;padding:16px;background:var(--b);color:var(--on-band);display:flex;flex-direction:column;gap:4px}
-.half .n{font:400 2.4rem/1 var(--f-wordmark);opacity:.9}
+.half .n{font:800 2.4rem/1 var(--f-wordmark);opacity:.9}
 .half b{font:700 1.15rem var(--f-display)}
 .half p{font-size:.88rem;opacity:.92}
 .skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
@@ -334,7 +335,7 @@ body.editing .tick{cursor:pointer}
 .cycle b{font:700 1.2rem var(--f-display);color:var(--rust);display:block}
 .cycle p{font-size:.84rem;color:var(--muted)}
 .oath{border-radius:22px;background:var(--band-mustard);color:var(--on-band);padding:22px;text-align:center;display:flex;flex-direction:column;gap:12px;align-items:center}
-.oath h3{font-family:var(--f-wordmark);font-weight:400;font-size:2rem}
+.oath h3{font-family:var(--f-wordmark);font-weight:800;font-size:2rem}
 .oath .pills{justify-content:center}
 .ideas{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
 .ideas .panel h3{font-size:1.1rem;margin-bottom:8px}
@@ -343,7 +344,7 @@ body.editing .tick{cursor:pointer}
 /* Footer + edit bar */
 footer.foot{border-top:1px solid var(--line);padding-block:22px;color:var(--muted);font-size:.85rem}
 footer.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
-footer .slogan{font:400 1.4rem var(--f-wordmark);color:var(--gold)}
+footer .slogan{font:800 1.4rem var(--f-wordmark);color:var(--gold)}
 .editbar{position:fixed;inset:auto 0 0;z-index:9;background:var(--ink);color:var(--paper);padding-bottom:env(safe-area-inset-bottom,0px)}
 .editbar .wrap{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding-block:10px}
 .editbar .btn.ghost{background:color-mix(in srgb,var(--paper) 16%,transparent);color:var(--paper)}
@@ -725,16 +726,23 @@ function vCommittees(){
 
 /* ----- LIBRARY ----- */
 let libFilter = "all";
+const DEFAULT_CHANNELS = [
+  {name:"أحمد النفيس", show:"بودكاست «روايتهم»", why:"ضيوف يروون قصص حياتهم وتجاربهم الحقيقية؛ دروس في الصبر والتغيير وتحمّل المسؤولية.", q:"روايتهم أحمد النفيس"},
+  {name:"أحمد العربي", show:"مقاطع إيمانية وتحفيزية", why:"كلام قريب من الشباب عن الهمّة والثبات والعلاقة مع الله.", q:"أحمد العربي"},
+  {name:"نبيل العوضي", show:"قصص الأنبياء والصحابة", why:"سرد قصصي مشوّق يربط الشاب بالقدوات ويغرس القيم.", q:"نبيل العوضي قصص الأنبياء"},
+  {name:"ياسر الحزيمي", show:"محاضرات في الذات والعلاقات", why:"مهارات التعامل مع النفس والناس، وبناء الشخصية بأسلوب عملي.", q:"ياسر الحزيمي"}
+];
+const channels = () => S.channels || DEFAULT_CHANNELS;
 const LIBCAT = {self:"تطوير الذات", seerah:"سيرة وقدوات", iman:"إيمانيات", novel:"روايات هادفة", lead:"قيادة", podcast:"بودكاست وسلاسل"};
 const LIBCOL = {self:"--band-teal", seerah:"--band-mustard", iman:"--band-plum", novel:"--band-rust", lead:"--ink", podcast:"--band-plum"};
 function vLibrary(){
   const items = (S.library||[]).filter(b=>libFilter==="all"||b.cat===libFilter);
-  const feat = S.featured||{};
-  return `${secH("مكتبة فتي","كتب وبودكاست تنمّي ابن الرابعة عشرة: قيم إسلامية، عقل ناضج، وهمّة عالية")}
-  <div class="lib-feature"><span class="eyebrow" style="color:#FFE9B8">كاتب نتابعه</span><h3>${T("featured.name")}</h3><p>${T("featured.d",{area:true})}</p>
-    ${(feat.works||[]).length?`<div class="pills">${feat.works.map((w,i)=>`<span class="pill" style="padding:4px 12px">${editing?`<input type="text" data-bind="featured.works.${i}" value="${esc(w)}" id="f-fw-${i}" style="width:160px">`:esc(w)}${editing?`<button type="button" data-act="del" data-path="featured.works" data-i="${i}" aria-label="إزالة">×</button>`:""}</span>`).join("")}</div>`:`<p style="opacity:.8;font-size:.88rem">أضف عناوين رواياته من وضع المشرف.</p>`}
-    ${editing?`<div class="row"><input type="text" id="newWork" placeholder="عنوان رواية"><button class="btn sm ghost" type="button" data-act="addWork" style="background:rgba(255,255,255,.18);color:var(--on-band)">إضافة</button></div>`:""}
-  </div>
+  if (!S.channels) S.channels = JSON.parse(JSON.stringify(DEFAULT_CHANNELS));
+  return `${secH("مكتبة فتي","كتب ومقاطع تنمّي ابن الرابعة عشرة: قيم إسلامية، عقل ناضج، وهمّة عالية")}
+  <div class="lib-feature"><span class="eyebrow" style="color:#FFE9B8">شاهد على يوتيوب</span><h3>صنّاع محتوى نتابعهم</h3><p>قصص حقيقية، ودروس إيمانية، ومهارات حياة بأسلوب قريب من الشباب. اختيارات تناسب قيمنا وأعمارنا.</p></div>
+  <div class="lgrid">${channels().map((c,i)=>`<div class="book"><div class="spine pod" style="--sc:var(--rust)">▶</div><div style="min-width:0"><b>${T(`channels.${i}.name`)}</b><span class="by">${T(`channels.${i}.show`)}</span><p>${T(`channels.${i}.why`,{area:true})}</p>${editing?`<div class="field" style="margin-top:6px"><label for="f-chq-${i}">كلمات البحث في يوتيوب</label><input type="text" data-bind="channels.${i}.q" value="${esc(c.q||"")}" id="f-chq-${i}"></div>`:""}<div class="tags"><a class="btn sm" href="https://www.youtube.com/results?search_query=${encodeURIComponent(c.q||c.name)}" target="_blank" rel="noopener">▶ شاهد على يوتيوب</a></div>${delBtn("channels",i)}</div></div>`).join("")}</div>
+  ${editing?`<div class="panel"><h3 style="margin-bottom:10px">إضافة صانع محتوى</h3><div class="row"><input type="text" id="nc-name" placeholder="الاسم"><input type="text" id="nc-show" placeholder="البرنامج أو السلسلة"></div><div class="row" style="margin-top:8px"><input type="text" id="nc-why" placeholder="لماذا نرشّحه؟"><button class="btn" type="button" data-act="addCh">إضافة</button></div></div>`:""}
+  <h3 style="margin-top:6px">كتب وسلاسل مسموعة</h3>
   <div class="filters" role="group" aria-label="تصنيف">${[["all","الكل"],...Object.entries(LIBCAT)].map(([k,l])=>`<button type="button" data-act="libf" data-k="${k}" aria-pressed="${libFilter===k}">${l}</button>`).join("")}</div>
   ${editing?`<div class="panel"><h3 style="margin-bottom:10px">إضافة إلى المكتبة</h3><div class="row"><select id="nl-cat">${Object.entries(LIBCAT).map(([k,l])=>`<option value="${k}">${l}</option>`).join("")}</select><input type="text" id="nl-t" placeholder="العنوان"><input type="text" id="nl-by" placeholder="المؤلف أو المقدّم"></div><div class="row" style="margin-top:8px"><input type="text" id="nl-why" placeholder="لماذا نرشّحه؟"><button class="btn" type="button" data-act="addLib">إضافة</button></div></div>`:""}
   <div class="lgrid">${items.map(b=>{const i=S.library.indexOf(b); const isPod=b.cat==="podcast"; return `<div class="book"><div class="spine ${isPod?"pod":""}" style="--sc:var(${LIBCOL[b.cat]||"--band-teal"})">${isPod?"🎧":esc(initial(b.t))}</div><div style="min-width:0"><b>${T(`library.${i}.t`)}</b><span class="by">${T(`library.${i}.by`)}</span><p>${T(`library.${i}.why`,{area:true})}</p><div class="tags"><span class="chip">${LIBCAT[b.cat]||""}</span></div>${delBtn("library",i)}</div></div>`}).join("") || `<div class="empty">لا عناصر في هذا التصنيف</div>`}</div>
@@ -816,7 +824,7 @@ document.addEventListener("click", e=>{
     case "task": { const t=S.committees[+b.dataset.c].tasks[+b.dataset.t]; t.done=!t.done; break; }
     case "addTask": { const t=val("nt-"+b.dataset.c); if(!t) return; (S.committees[+b.dataset.c].tasks ||= []).push({t,done:false}); break; }
     case "addWin": { const t=val("nw-"+b.dataset.c); if(!t) return; (S.committees[+b.dataset.c].wins ||= []).push({t,date:today(),img:""}); break; }
-    case "addWork": { const t=val("newWork"); if(!t) return; (S.featured.works ||= []).push(t); break; }
+    case "addCh": { const n=val("nc-name"); if(!n) return toast("اكتب الاسم"); if(!S.channels) S.channels = JSON.parse(JSON.stringify(DEFAULT_CHANNELS)); S.channels.push({name:n, show:val("nc-show"), why:val("nc-why"), q:n}); break; }
     case "addLib": { const t=val("nl-t"); if(!t) return toast("اكتب العنوان"); S.library.push({cat:val("nl-cat")||"self", t, by:val("nl-by"), why:val("nl-why")}); break; }
     default: return;
   }
