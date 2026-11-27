@@ -383,15 +383,27 @@ input[type=password]{font:inherit;width:100%;padding:8px 11px;border-radius:10px
 </header>
 <main class="wrap" id="app"><div class="empty">جارٍ التحميل…</div></main>
 <footer class="foot"><div class="wrap"><span class="slogan">فتّي ✦ روح الفريق</span><span id="stamp"></span><span>تاسع VIP</span></div></footer>
-<div class="editbar" id="editbar" hidden=""><div class="wrap"><span id="editMsg">وضع المشرف: عدّل ثم احفظ لينشر التحديث لكل من يفتح الرابط</span><div class="row" style="flex:0 0 auto"><button class="btn ghost" type="button" id="logoutBtn">خروج</button><button class="btn ghost" type="button" id="discardBtn">إلغاء التعديلات</button><button class="btn gold" type="button" id="saveBtn">حفظ ونشر</button></div></div></div>
+<div class="editbar" id="editbar" hidden=""><div class="wrap"><span id="editMsg">وضع المشرف: عدّل ثم احفظ لينشر التحديث لكل من يفتح الرابط</span><div class="row" style="flex:0 0 auto"><button class="btn ghost" type="button" id="logoutBtn">خروج</button><button class="btn ghost" type="button" id="discardBtn">إلغاء التعديلات</button><button class="btn ghost" type="button" id="dlBtn">تنزيل ملف البيانات</button><button class="btn gold" type="button" id="saveBtn">حفظ ونشر</button></div></div></div>
 <div class="toast" id="toast" hidden=""></div>
+<div class="modal" id="upHelp" hidden=""><div class="panel" style="width:min(440px,100%);display:flex;flex-direction:column;gap:10px">
+  <h3>آخر خطوة: ارفع الملف</h3>
+  <ol style="margin:0;padding-inline-start:1.2em;display:flex;flex-direction:column;gap:6px">
+    <li>افتح صفحة الرفع (الزر بالأسفل). تأكد أنك مسجّل دخول في GitHub.</li>
+    <li>اضغط <b>choose your files</b> واختر <b>data.json</b> من التنزيلات.</li>
+    <li>اضغط الزر الأخضر <b>Commit changes</b>. يظهر التحديث للجميع خلال دقيقتين.</li>
+  </ol>
+  <div class="row"><a class="btn gold" id="upLink" href="https://github.com/otaibiomar98/fatiy/upload/main" target="_blank" rel="noopener" style="text-decoration:none">افتح صفحة الرفع</a><button class="btn ghost" type="button" id="upClose">تم</button></div>
+</div></div>
 <div class="modal" id="login" hidden=""><form class="panel" id="lg-form" autocomplete="off">
   <h3>دخول المشرف</h3>
   <p class="note">التعديلات تُحفظ في مستودع GitHub الخاص بالمنصة. المفتاح يبقى على هذا الجهاز فقط ولا يراه أحد.</p>
   <div class="field"><label for="lg-repo">المستودع (user/repo)</label><input type="text" id="lg-repo" dir="ltr" placeholder="username/fatiy"></div>
   <div class="field"><label for="lg-token">مفتاح GitHub (Fine-grained token)</label><input type="password" id="lg-token" dir="ltr" placeholder="github_pat_…"></div>
   <p class="note" id="lg-err" role="status"></p>
-  <div class="row"><button class="btn" type="submit">دخول</button><button class="btn ghost" type="button" id="lg-cancel">إلغاء</button></div>
+  <div class="row"><button class="btn" type="submit">دخول بالمفتاح</button><button class="btn ghost" type="button" id="lg-cancel">إلغاء</button></div>
+  <hr style="border:0;border-top:1px solid var(--line);margin:4px 0">
+  <button class="btn gold" type="button" id="lg-file">تعديل بدون مفتاح (الحفظ كملف)</button>
+  <p class="note">تعدّل ثم تنزّل ملف <b>data.json</b> وترفعه في GitHub من Add file ← Upload files ← Commit changes.</p>
 </form></div>
 <input type="file" accept="image/*" class="ufile" id="ufile">
 
@@ -854,14 +866,18 @@ function shrink(file, maxSide, q){
 function updateBar(){
   $("#editbar").hidden = !editing;
   $("#editMsg").textContent = dirty ? "لديك تعديلات غير محفوظة" : "وضع المشرف: عدّل ثم اضغط «حفظ ونشر» ليظهر التحديث لكل من يفتح الرابط";
-  $("#saveBtn").disabled = !dirty || saving;
+  $("#saveBtn").disabled = fileMode ? false : (!dirty || saving);
+  $("#saveBtn").hidden = fileMode; $("#dlBtn").hidden = !editing;
   $("#editBtn").textContent = editing ? "✓ إنهاء التعديل" : "✎ المشرف";
 }
 $("#editBtn").addEventListener("click", ()=>{
   if (editing && dirty){ toast("احفظ أو ألغِ التعديلات أولاً"); return; }
   if (!editing && !(gh.token && gh.repo)){ openLogin(); return; }
+  if (editing) fileMode = false;
   editing = !editing; kd = null; updateBar(); render();
 });
+$("#dlBtn").addEventListener("click", ()=>downloadData());
+$("#upClose").addEventListener("click", ()=>{ $("#upHelp").hidden = true; });
 $("#discardBtn").addEventListener("click", ()=>{ S = JSON.parse(ORIGINAL); dirty = false; editing = false; kd = null; updateBar(); render(); toast("أُلغيت التعديلات"); });
 /* ---- Save to GitHub: images become files in images/, data goes to data.json ---- */
 const b64 = bytes => { let s=""; const CH=0x8000; for(let i=0;i<bytes.length;i+=CH) s+=String.fromCharCode.apply(null, bytes.subarray(i,i+CH)); return btoa(s); };
@@ -887,6 +903,7 @@ async function uploadPendingImages(){
   }
 }
 $("#saveBtn").addEventListener("click", async ()=>{
+  if (fileMode){ downloadData(); return; }
   if (!gh.token || !gh.repo){ openLogin(); return; }
   saving = true; updateBar(); $("#saveBtn").textContent = "جارٍ الحفظ…";
   try{
@@ -898,7 +915,8 @@ $("#saveBtn").addEventListener("click", async ()=>{
     dirty = false; render(); toast("حُفظ ✓ يظهر للجميع خلال دقيقة أو دقيقتين");
   }catch(err){
     const s = err && err.status;
-    if (s===401||s===403) toast("مفتاح GitHub غير صالح أو بلا صلاحية كتابة. أعد الدخول");
+    if (s===401){ gh.token = undefined; try{ localStorage.removeItem(GH_KEY); }catch(_){} openLogin(); $("#lg-err").textContent = "المفتاح المحفوظ انتهى أو تغيّر. الصق المفتاح الجديد ثم اضغط «حفظ ونشر» مرة أخرى. تعديلاتك محفوظة."; }
+    else if (s===403) toast("المفتاح لا يملك صلاحية الكتابة (Contents: Read and write) على مستودع fatiy");
     else if (s===404) toast("لم يُعثر على المستودع. تأكد من الاسم بصيغة user/repo");
     else if (s===409) toast("تعارض في الحفظ. حدّث الصفحة وأعد المحاولة");
     else toast("تعذّر الحفظ. تحقق من الاتصال وحاول مرة أخرى");
@@ -910,6 +928,16 @@ $("#saveBtn").addEventListener("click", async ()=>{
 function openLogin(){ $("#login").hidden = false; $("#lg-repo").value = gh.repo || guessRepo(); $("#lg-token").value = ""; $("#lg-token").focus(); }
 function guessRepo(){ const m = location.hostname.match(/^([\w-]+)\.github\.io$/); const seg = location.pathname.split("/").filter(Boolean)[0]; return m ? (m[1] + "/" + (seg || (m[1]+".github.io"))) : ""; }
 $("#lg-cancel").addEventListener("click", ()=>{ $("#login").hidden = true; });
+let fileMode = false;
+$("#lg-file").addEventListener("click", ()=>{ fileMode = true; $("#login").hidden = true; editing = true; updateBar(); render(); toast("عدّل ما تريد ثم اضغط «تنزيل ملف البيانات»"); });
+function downloadData(){
+  S.savedAt = Date.now();
+  const blob = new Blob([JSON.stringify(S)], {type:"application/json"});
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "data.json";
+  document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href), 5000);
+  $("#upHelp").hidden = false;
+  toast("نُزّل data.json. ارفعه الآن في GitHub");
+}
 $("#lg-form").addEventListener("submit", async e=>{
   e.preventDefault();
   const repo = $("#lg-repo").value.trim().replace(/^https:\/\/github\.com\//,"").replace(/\/$/,""), token = $("#lg-token").value.trim();
@@ -922,10 +950,10 @@ $("#lg-form").addEventListener("submit", async e=>{
     if (j.permissions && !j.permissions.push) throw 403;
     gh.repo = repo; gh.token = token;
     try{ localStorage.setItem(GH_KEY, JSON.stringify(gh)); }catch(_){}
-    $("#login").hidden = true; editing = true; updateBar(); render(); toast("أهلاً بالمشرف ✎");
-  }catch(s){ $("#lg-err").textContent = s===404 ? "المستودع غير موجود أو المفتاح لا يصل إليه" : "المفتاح غير صالح أو بلا صلاحية كتابة"; }
+    $("#login").hidden = true; editing = true; updateBar(); render(); toast(dirty ? "تم الدخول. اضغط «حفظ ونشر» الآن" : "أهلاً بالمشرف ✎");
+  }catch(s){ $("#lg-err").textContent = s===404 ? "المفتاح لا يصل إلى هذا المستودع. اختر fatiy في Repository access" : s===401 ? "المفتاح غير صحيح أو انتهى. تأكد أنك نسخت أحدث مفتاح كاملاً" : "المفتاح بلا صلاحية كتابة. فعّل Contents: Read and write"; }
 });
-$("#logoutBtn").addEventListener("click", ()=>{ if (dirty){ toast("احفظ أو ألغِ التعديلات أولاً"); return; } try{ localStorage.removeItem(GH_KEY); }catch(_){} gh.token = gh.repo = undefined; editing = false; updateBar(); render(); toast("خرجت من وضع المشرف على هذا الجهاز"); });
+$("#logoutBtn").addEventListener("click", ()=>{ if (dirty && !fileMode){ toast("احفظ أو ألغِ التعديلات أولاً"); return; } try{ localStorage.removeItem(GH_KEY); }catch(_){} gh.token = gh.repo = undefined; editing = false; fileMode = false; dirty = false; S = JSON.parse(ORIGINAL); updateBar(); render(); toast("خرجت من وضع المشرف على هذا الجهاز"); });
 
 window.addEventListener("hashchange", ()=>{ render(); window.scrollTo({top:0}); });
 render();
