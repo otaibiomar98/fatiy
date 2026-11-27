@@ -383,44 +383,42 @@ input[type=password]{font:inherit;width:100%;padding:8px 11px;border-radius:10px
 </header>
 <main class="wrap" id="app"><div class="empty">جارٍ التحميل…</div></main>
 <footer class="foot"><div class="wrap"><span class="slogan">فتّي ✦ روح الفريق</span><span id="stamp"></span><span>تاسع VIP</span></div></footer>
-<div class="editbar" id="editbar" hidden=""><div class="wrap"><span id="editMsg">وضع المشرف: عدّل ثم احفظ لينشر التحديث لكل من يفتح الرابط</span><div class="row" style="flex:0 0 auto"><button class="btn ghost" type="button" id="logoutBtn">خروج</button><button class="btn ghost" type="button" id="discardBtn">إلغاء التعديلات</button><button class="btn ghost" type="button" id="dlBtn">تنزيل ملف البيانات</button><button class="btn gold" type="button" id="saveBtn">حفظ ونشر</button></div></div></div>
+<div class="editbar" id="editbar" hidden=""><div class="wrap"><span id="editMsg">وضع المشرف: عدّل ثم احفظ لينشر التحديث لكل من يفتح الرابط</span><div class="row" style="flex:0 0 auto"><button class="btn ghost" type="button" id="logoutBtn">خروج</button><button class="btn ghost" type="button" id="discardBtn">إلغاء التعديلات</button><button class="btn gold" type="button" id="saveBtn">حفظ ونشر</button></div></div></div>
 <div class="toast" id="toast" hidden=""></div>
-<div class="modal" id="upHelp" hidden=""><div class="panel" style="width:min(440px,100%);display:flex;flex-direction:column;gap:10px">
-  <h3>آخر خطوة: ارفع الملف</h3>
-  <ol style="margin:0;padding-inline-start:1.2em;display:flex;flex-direction:column;gap:6px">
-    <li>افتح صفحة الرفع (الزر بالأسفل). تأكد أنك مسجّل دخول في GitHub.</li>
-    <li>اضغط <b>choose your files</b> واختر <b>data.json</b> من التنزيلات.</li>
-    <li>اضغط الزر الأخضر <b>Commit changes</b>. يظهر التحديث للجميع خلال دقيقتين.</li>
-  </ol>
-  <div class="row"><a class="btn gold" id="upLink" href="https://github.com/otaibiomar98/fatiy/upload/main" target="_blank" rel="noopener" style="text-decoration:none">افتح صفحة الرفع</a><button class="btn ghost" type="button" id="upClose">تم</button></div>
-</div></div>
-<div class="modal" id="login" hidden=""><form class="panel" id="lg-form" autocomplete="off">
+
+<div class="modal" id="login" hidden=""><form class="panel" id="lg-form">
   <h3>دخول المشرف</h3>
-  <p class="note">التعديلات تُحفظ في مستودع GitHub الخاص بالمنصة. المفتاح يبقى على هذا الجهاز فقط ولا يراه أحد.</p>
-  <div class="field"><label for="lg-repo">المستودع (user/repo)</label><input type="text" id="lg-repo" dir="ltr" placeholder="username/fatiy"></div>
-  <div class="field"><label for="lg-token">مفتاح GitHub (Fine-grained token)</label><input type="password" id="lg-token" dir="ltr" placeholder="github_pat_…"></div>
+  <p class="note">بعد الدخول تعدّل وتضغط «حفظ ونشر»، فيظهر التحديث لكل من يفتح الرابط فوراً.</p>
+  <div class="field"><label for="lg-email">البريد الإلكتروني</label><input type="email" id="lg-email" dir="ltr" autocomplete="username" style="font:inherit;width:100%;padding:8px 11px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink)"></div>
+  <div class="field"><label for="lg-pass">كلمة المرور</label><input type="password" id="lg-pass" dir="ltr" autocomplete="current-password"></div>
   <p class="note" id="lg-err" role="status"></p>
-  <div class="row"><button class="btn" type="submit">دخول بالمفتاح</button><button class="btn ghost" type="button" id="lg-cancel">إلغاء</button></div>
-  <hr style="border:0;border-top:1px solid var(--line);margin:4px 0">
-  <button class="btn gold" type="button" id="lg-file">تعديل بدون مفتاح (الحفظ كملف)</button>
-  <p class="note">تعدّل ثم تنزّل ملف <b>data.json</b> وترفعه في GitHub من Add file ← Upload files ← Commit changes.</p>
+  <div class="row"><button class="btn" type="submit" id="lg-go">دخول</button><button class="btn ghost" type="button" id="lg-cancel">إلغاء</button></div>
 </form></div>
 <input type="file" accept="image/*" class="ufile" id="ufile">
 
 <script type="application/json" id="state">{"savedAt": 1795715462365, "site": {"title": "مستقبل فتي", "subtitle": "شباب تاسع", "motto": "من لاعب في الفريق… إلى قائد يصنع الفريق. هنا نتابع نقاطنا وخواطرنا وأهدافنا ولجاننا، يوماً بيوم.", "groupPhoto": "images/group.jpg", "yearGoals": [{"t": "من لاعب إلى قائد", "d": "كل شاب يقود فقرة كاملة في لقاء واحد على الأقل خلال الموسم"}, {"t": "خاطرة لكل شاب", "d": "كل مشترك يُلقي خاطرة ويتحسّن تقييمه من خاطرة لأخرى"}, {"t": "لجان تنجز", "d": "كل لجنة تحقق مهامها وتوثّق إنجازاً واحداً على الأقل كل شهر"}, {"t": "أهداف تعبّدية جماعية", "d": "الفجر في المسجد، أذكار الصباح والمساء، وختمة موزّعة على الفريق"}, {"t": "طلعة كل شهر", "d": "طلعات سريعة تختارها المجموعة بالتصويت، منها الطلعة النجمة: حديث أبي بكر"}, {"t": "سجلّ الإنجاز", "d": "نوثّق التقدم بالصور والنقاط ونراجعه كل شهر"}], "news": [{"date": "2026-11-26", "t": "انطلاق منصة «مستقبل فتي» لشباب تاسع 🎉"}], "programs": [{"name": "نادي قيادة", "d": "لقاءات الأحد والثلاثاء ومنهج القيادة"}, {"name": "نقطة تحوّل", "d": "نظام الإشراف: من لاعب إلى قائد"}, {"name": "خواطر من الخاطر", "d": "الإلقاء وتقييمه ببنود واضحة"}, {"name": "أنا أعرف ذاتي", "d": "اكتشاف الذات ونقاط القوة"}, {"name": "لوحة النقاط", "d": "كل ٤٠ نقطة = هدية"}, {"name": "تكاليف القروب", "d": "تحديات يومية بالجوال"}]}, "supervisors": [{"name": "", "role": "مشرف المجموعة", "photo": ""}, {"name": "", "role": "مشرف مساعد", "photo": ""}], "gallery": [], "members": {"m01": {"name": "أحمد السعيد", "order": 1, "cats": {"cult": 0, "early": 6, "init": 3, "move": 38, "task": 8}, "giftsGiven": 0, "photo": "images/m01.jpg"}, "m02": {"name": "أسامة النجار", "order": 2, "cats": {"cult": 0, "early": 6, "init": 3, "move": 31, "task": 0}, "giftsGiven": 0, "photo": "images/m02.jpg"}, "m03": {"name": "خالد الإبراهيم", "order": 3, "cats": {"cult": 0, "early": 2, "init": 4, "move": 45, "task": 3}, "giftsGiven": 0, "photo": "images/m03.jpg"}, "m04": {"name": "عمار بوعركي", "order": 4, "cats": {"cult": 0, "early": 13, "init": 5, "move": 41, "task": 11}, "giftsGiven": 0, "photo": "images/m04.jpg"}, "m05": {"name": "محمد الكندري", "order": 5, "cats": {"cult": 0, "early": 7, "init": 2, "move": 35, "task": 0}, "giftsGiven": 0, "photo": "images/m05.jpg"}, "m07": {"name": "يوسف الجارالله", "order": 7, "cats": {"cult": 0, "early": 2, "init": 4, "move": 35, "task": 6}, "giftsGiven": 0, "photo": "images/m07.jpg"}, "m08": {"name": "يوسف الشاهين", "order": 8, "cats": {"cult": 0, "early": 10, "init": 3, "move": 31, "task": 9}, "giftsGiven": 0, "photo": "images/m08.jpg"}, "m09": {"name": "يوسف الوقيان", "order": 9, "cats": {"cult": 0, "early": 10, "init": 5, "move": 45, "task": 12}, "giftsGiven": 0, "photo": "images/m09.jpg"}, "m10": {"name": "يوسف الشمري", "order": 10, "cats": {"cult": 0, "early": 6, "init": 2, "move": 38, "task": 6}, "giftsGiven": 0, "photo": "images/m10.jpg"}, "m11": {"name": "فواز مشعل", "order": 11, "cats": {"cult": 0, "early": 10, "init": 2, "move": 39, "task": 0}, "giftsGiven": 0, "photo": "images/m11.jpg"}, "m12": {"name": "شملان الرومي", "order": 12, "cats": {"cult": 0, "early": 0, "init": 2, "move": 22, "task": 0}, "giftsGiven": 0, "photo": "images/m12.jpg"}, "m13": {"name": "خالد البريدي", "order": 13, "cats": {"cult": 0, "early": 2, "init": 2, "move": 36, "task": 0}, "giftsGiven": 0, "photo": "images/m13.jpg"}, "m14": {"name": "علي المشعل", "order": 14, "cats": {"cult": 0, "early": 4, "init": 2, "move": 36, "task": 0}, "giftsGiven": 0, "photo": "images/m14.jpg"}, "m15": {"name": "فراس الكندري", "order": 15, "cats": {"cult": 0, "early": 6, "init": 3, "move": 43, "task": 11}, "giftsGiven": 0, "photo": "images/m15.jpg"}}, "khawater": [], "goals": [{"id": "g1", "t": "صلاة الفجر في المسجد", "d": "عدد الأيام في الأسبوع"}, {"id": "g2", "t": "أذكار الصباح والمساء", "d": "المداومة اليومية"}, {"id": "g3", "t": "إلقاء خاطرة", "d": "خاطرة واحدة على الأقل"}, {"id": "g4", "t": "قراءة كتاب من مكتبة فتي", "d": "إنهاء كتاب كامل"}, {"id": "g5", "t": "تطبيق تكاليف القروب", "d": "تسليم التكليف قبل ٩ مساءً"}], "progress": {}, "committees": [{"id": "c1", "name": "لجنة الطلعات", "icon": "⛺", "color": "teal", "desc": "ترتّب طلعات المجموعة من اقتراح المكان والتصويت إلى تصوّر فقرات الطلعة.", "members": ["m02", "m07", "m13"], "tasks": [{"t": "٣ خيارات للمكان قبل الطلعة بـ٣ أيام وتصويت في القروب", "done": false}, {"t": "إرسال الموقع والوقت قبل الطلعة بـ٢٤ ساعة", "done": false}, {"t": "تصوّر فقرات الطلعة وتوزيع المسؤوليات", "done": false}], "wins": []}, {"id": "c2", "name": "لجنة البرنامج والفقرات", "icon": "🎯", "color": "mustard", "desc": "تنظّم جدول الفقرات الأسبوعي وتحكّمها وترفع مقترحات التطوير للكابتن.", "members": ["m04", "m03", "m15", "m10"], "tasks": [{"t": "جدول بالدقيقة لكل لقاء", "done": false}, {"t": "مسؤول لكل فقرة", "done": false}, {"t": "«حَكَم وقت» بصافرة ينبّه قبل النهاية", "done": false}, {"t": "رفع مقترحات التطوير للكابتن", "done": false}], "wins": []}, {"id": "c3", "name": "لجنة التواصل", "icon": "📞", "color": "rust", "desc": "تتابع تكاليف الكابتن وتذكّر الشباب وتسجّل من طبّق ومن لم يطبّق.", "members": ["m14", "m08"], "tasks": [{"t": "تذكير بالتكليف قبل الموعد بساعة", "done": false}, {"t": "الرد خلال ساعتين بكلمة «تم»", "done": false}, {"t": "تسجيل من طبّق ومن لم يطبّق أسبوعياً", "done": false}], "wins": []}, {"id": "c4", "name": "لجنة الإعلام", "icon": "📸", "color": "plum", "desc": "توثّق الفقرات والطلعات وتصنع محتوى المجموعة وستوري فتي.", "members": ["m01", "m09", "m05", "m11"], "newMembers": ["m11"], "tasks": [{"t": "توثيق كل لقاء بالصور", "done": false}, {"t": "ستوري فتي أسبوعياً", "done": false}, {"t": "إضافة لقطات البرنامج إلى المنصة", "done": false}], "wins": []}], "featured": {"name": "أحمد النفيس", "d": "روايات بأسلوب قريب من الشباب، تحمل أفكاراً تنمّي التفكير وتبني الشخصية. نختار منها ما يناسب قيمنا وأعمارنا.", "works": []}, "library": [{"cat": "seerah", "t": "صور من حياة الصحابة", "by": "عبد الرحمن رأفت الباشا", "why": "قصص قصيرة مشوّقة عن شباب صنعوا التاريخ، تُقرأ قصة كل ليلة."}, {"cat": "seerah", "t": "الرحيق المختوم", "by": "صفي الرحمن المباركفوري", "why": "السيرة النبوية كاملة بأسلوب مرتّب وسهل؛ القدوة الأولى للقائد."}, {"cat": "seerah", "t": "رجال حول الرسول", "by": "خالد محمد خالد", "why": "صفات القيادة والشجاعة في سير الصحابة."}, {"cat": "seerah", "t": "قصص الأنبياء", "by": "ابن كثير", "why": "دروس الصبر والثبات والدعوة من سير الأنبياء عليهم السلام."}, {"cat": "self", "t": "العادات السبع للمراهقين الأكثر فعالية", "by": "شون كوفي (مترجم)", "why": "مكتوب للمراهقين خصيصاً: المبادرة، والأولويات، والعمل مع الآخرين."}, {"cat": "self", "t": "استمتع بحياتك", "by": "د. محمد العريفي", "why": "مهارات التعامل مع الناس بقصص واقعية وروح إسلامية."}, {"cat": "iman", "t": "لأنك الله", "by": "علي جابر الفيفي", "why": "رحلة قصيرة مع أسماء الله الحسنى تقرّب القلب وتطمئنه."}, {"cat": "iman", "t": "لا تحزن", "by": "د. عائض القرني", "why": "جرعات أمل وتفاؤل مبنية على القرآن والسنة."}, {"cat": "lead", "t": "حياة في الإدارة", "by": "د. غازي القصيبي", "why": "تجربة إدارية حقيقية بأسلوب ممتع؛ دروس في المسؤولية واتخاذ القرار."}, {"cat": "novel", "t": "حيّ بن يقظان", "by": "ابن طفيل", "why": "رواية فكرية كلاسيكية عن التأمل والوصول إلى الحقيقة بالعقل."}, {"cat": "novel", "t": "الشيخ والبحر", "by": "إرنست همنغواي (مترجمة)", "why": "قصة قصيرة عن الإصرار وعدم الاستسلام مهما طال التعب."}, {"cat": "podcast", "t": "خواطر", "by": "أحمد الشقيري", "why": "حلقات قصيرة عن الإتقان والأخلاق والتطوير، تناسب فكرة خواطرنا."}, {"cat": "podcast", "t": "قلبي اطمأن", "by": "غيث", "why": "قصص عطاء ومساعدة حقيقية تعلّم الإحسان والرحمة."}, {"cat": "podcast", "t": "قصص الأنبياء (سلسلة صوتية)", "by": "نبيل العوضي", "why": "سرد مشوّق للاستماع في الطريق أو قبل النوم."}, {"cat": "podcast", "t": "السيرة النبوية (سلسلة صوتية)", "by": "د. طارق السويدان", "why": "السيرة بأسلوب قصصي مع دروس قيادية."}]}</script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script>
+/* Firebase: public web config (not a secret; writes are protected by sign-in + security rules) */
+const FB_CONFIG = {apiKey:"AIzaSyBbuXgEIV_roHvN7lH9w2zUviMuqGF5UHo", authDomain:"fatiy-tasie.firebaseapp.com", projectId:"fatiy-tasie", storageBucket:"fatiy-tasie.firebasestorage.app", messagingSenderId:"1022295032311", appId:"1:1022295032311:web:ca1563b0f70813434e6ef2"};
+let FDB = null, FAUTH = null;
+try{ firebase.initializeApp(FB_CONFIG); FDB = firebase.firestore(); FAUTH = firebase.auth(); }catch(_){}
+const withTimeout = (p, ms) => Promise.race([p, new Promise((_,rej)=>setTimeout(()=>rej(new Error("timeout")), ms))]);
 document.addEventListener("DOMContentLoaded", async ()=>{
   let data = null;
-  try{ const r = await fetch("data.json?t=" + Date.now(), {cache:"no-store"}); if (r.ok) data = await r.json(); }catch(_){}
+  if (FDB){ try{ const d = await withTimeout(FDB.doc("fatiy/state").get(), 7000); if (d.exists && d.data().json) data = JSON.parse(d.data().json); }catch(_){} }
+  if (!data){ try{ const r = await fetch("data.json?t=" + Date.now(), {cache:"no-store"}); if (r.ok) data = await r.json(); }catch(_){} }
   if (!data) data = JSON.parse(document.getElementById("state").textContent);
   boot(data);
 });
 function boot(DATA){
 const ORIGINAL = JSON.stringify(DATA);
 let S = JSON.parse(ORIGINAL);
+let ORIG = ORIGINAL;
 let editing = false, dirty = false, saving = false;
-const GH_KEY = "fatiy-gh-v1";
-const gh = (()=>{ try{ return JSON.parse(localStorage.getItem(GH_KEY)||"null"); }catch(_){ return null; } })() || {};
+const IMG = {};
 
 /* ---------- Static content ---------- */
 const GOAL = 40;
@@ -468,7 +466,8 @@ const DAILY = {
 const $ = s=>document.querySelector(s);
 const AR = n => Number(n||0).toLocaleString("ar-EG",{maximumFractionDigits:2});
 const esc = s => String(s??"").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const safeImg = u => (typeof u==="string" && (/^data:image\/(png|jpe?g|webp|gif);base64,/.test(u) || /^https:\/\//.test(u) || /^images\/[\w.-]+\.(jpe?g|png|webp)$/.test(u))) ? u : "";
+const safeImg0 = u => (typeof u==="string" && (/^data:image\/(png|jpe?g|webp|gif);base64,/.test(u) || /^https:\/\//.test(u) || /^images\/[\w.-]+\.(jpe?g|png|webp)$/.test(u))) ? u : "";
+const safeImg = u => (typeof u==="string" && u.startsWith("fsimg:")) ? (IMG[u.slice(6)]||"") : safeImg0(u);
 const uid = p => p + Date.now().toString(36) + Math.random().toString(36).slice(2,5);
 const initial = n => (String(n||"").trim()[0]||"؟");
 const members = () => Object.entries(S.members).map(([id,m])=>({id,...m})).sort((a,b)=>(a.order||0)-(b.order||0));
@@ -862,34 +861,29 @@ function shrink(file, maxSide, q){
   });
 }
 
-/* ================= EDIT MODE + SAVE ================= */
+/* ================= EDIT MODE + SAVE (Firebase) ================= */
 function updateBar(){
   $("#editbar").hidden = !editing;
-  $("#editMsg").textContent = dirty ? "لديك تعديلات غير محفوظة" : "وضع المشرف: عدّل ثم اضغط «حفظ ونشر» ليظهر التحديث لكل من يفتح الرابط";
-  $("#saveBtn").disabled = fileMode ? false : (!dirty || saving);
-  $("#saveBtn").hidden = fileMode; $("#dlBtn").hidden = !editing;
+  $("#editMsg").textContent = dirty ? "لديك تعديلات غير محفوظة" : "وضع المشرف: عدّل ثم اضغط «حفظ ونشر» ليظهر التحديث للجميع فوراً";
+  $("#saveBtn").disabled = !dirty || saving;
   $("#editBtn").textContent = editing ? "✓ إنهاء التعديل" : "✎ المشرف";
 }
+const signedIn = () => !!(FAUTH && FAUTH.currentUser);
 $("#editBtn").addEventListener("click", ()=>{
   if (editing && dirty){ toast("احفظ أو ألغِ التعديلات أولاً"); return; }
-  if (!editing && !(gh.token && gh.repo)){ openLogin(); return; }
-  if (editing) fileMode = false;
+  if (!editing && !signedIn()){ openLogin(); return; }
   editing = !editing; kd = null; updateBar(); render();
 });
-$("#dlBtn").addEventListener("click", ()=>downloadData());
-$("#upClose").addEventListener("click", ()=>{ $("#upHelp").hidden = true; });
-$("#discardBtn").addEventListener("click", ()=>{ S = JSON.parse(ORIGINAL); dirty = false; editing = false; kd = null; updateBar(); render(); toast("أُلغيت التعديلات"); });
-/* ---- Save to GitHub: images become files in images/, data goes to data.json ---- */
-const b64 = bytes => { let s=""; const CH=0x8000; for(let i=0;i<bytes.length;i+=CH) s+=String.fromCharCode.apply(null, bytes.subarray(i,i+CH)); return btoa(s); };
-async function ghReq(path, opts={}){
-  const r = await fetch(`https://api.github.com/repos/${gh.repo}/contents/${path}`, {...opts, headers:{"Authorization":"Bearer "+gh.token, "Accept":"application/vnd.github+json", ...(opts.headers||{})}});
-  if (r.status===404 && (!opts.method || opts.method==="GET")) return null;
-  if (!r.ok){ const e = new Error("gh"); e.status = r.status; throw e; }
-  return r.json();
-}
-async function ghPut(path, base64, message){
-  const cur = await ghReq(path + "?t=" + Date.now());
-  return ghReq(path, {method:"PUT", body: JSON.stringify({message, content: base64, ...(cur&&cur.sha?{sha:cur.sha}:{})})});
+$("#discardBtn").addEventListener("click", ()=>{ S = JSON.parse(ORIG); dirty = false; editing = false; kd = null; updateBar(); render(); toast("أُلغيت التعديلات"); });
+
+/* Images: new uploads are stored as their own documents (fatiy/state/img/{id}) and referenced as "fsimg:{id}" */
+function imgRefs(){ const out=[]; (function walk(o){ if(!o||typeof o!=="object") return; for(const k of Object.keys(o)){ const v=o[k]; if(typeof v==="string"&&v.startsWith("fsimg:")) out.push(v.slice(6)); else walk(v); } })(S); return out; }
+async function loadImgs(){
+  if (!FDB) return;
+  const need = imgRefs().filter(id=>!(id in IMG));
+  if (!need.length) return;
+  await Promise.all(need.map(async id=>{ try{ const d = await FDB.doc("fatiy/state/img/"+id).get(); IMG[id] = d.exists ? (d.data().data||"") : ""; }catch(_){ IMG[id] = ""; } }));
+  render();
 }
 async function uploadPendingImages(){
   const jobs = [];
@@ -897,68 +891,65 @@ async function uploadPendingImages(){
   let n = 0;
   for (const [o,k,v] of jobs){
     n++; $("#saveBtn").textContent = `رفع الصور ${AR(n)}/${AR(jobs.length)}…`;
-    const path = "images/" + uid("p") + ".jpg";
-    await ghPut(path, v.split(",")[1], "صورة جديدة");
-    o[k] = path;
+    const id = uid("p");
+    await FDB.doc("fatiy/state/img/"+id).set({data:v, at:Date.now()});
+    IMG[id] = v; o[k] = "fsimg:" + id;
   }
 }
 $("#saveBtn").addEventListener("click", async ()=>{
-  if (fileMode){ downloadData(); return; }
-  if (!gh.token || !gh.repo){ openLogin(); return; }
+  if (!FDB){ toast("تعذّر الاتصال بقاعدة البيانات. تحقق من الإنترنت"); return; }
+  if (!signedIn()){ openLogin(); return; }
   saving = true; updateBar(); $("#saveBtn").textContent = "جارٍ الحفظ…";
   try{
     await uploadPendingImages();
     S.savedAt = Date.now();
-    const bytes = new TextEncoder().encode(JSON.stringify(S));
-    $("#saveBtn").textContent = "حفظ البيانات…";
-    await ghPut("data.json", b64(bytes), "تحديث المنصة " + new Date().toLocaleString("ar-EG"));
-    dirty = false; render(); toast("حُفظ ✓ يظهر للجميع خلال دقيقة أو دقيقتين");
+    const json = JSON.stringify(S);
+    if (json.length > 900000) throw {code:"too-big"};
+    await FDB.doc("fatiy/state").set({json, savedAt:S.savedAt});
+    ORIG = json; dirty = false; render(); toast("حُفظ ✓ ظهر التحديث للجميع");
   }catch(err){
-    const s = err && err.status;
-    if (s===401){ gh.token = undefined; try{ localStorage.removeItem(GH_KEY); }catch(_){} openLogin(); $("#lg-err").textContent = "المفتاح المحفوظ انتهى أو تغيّر. الصق المفتاح الجديد ثم اضغط «حفظ ونشر» مرة أخرى. تعديلاتك محفوظة."; }
-    else if (s===403) toast("المفتاح لا يملك صلاحية الكتابة (Contents: Read and write) على مستودع fatiy");
-    else if (s===404) toast("لم يُعثر على المستودع. تأكد من الاسم بصيغة user/repo");
-    else if (s===409) toast("تعارض في الحفظ. حدّث الصفحة وأعد المحاولة");
-    else toast("تعذّر الحفظ. تحقق من الاتصال وحاول مرة أخرى");
+    const c = err && err.code;
+    if (c==="permission-denied" || c==="unauthenticated"){ openLogin(); $("#lg-err").textContent = "انتهت جلسة الدخول. ادخل مرة أخرى ثم اضغط «حفظ ونشر». تعديلاتك محفوظة."; }
+    else if (c==="too-big") toast("البيانات كبيرة جداً. احذف بعض الصور النصية ثم احفظ");
+    else toast("تعذّر الحفظ. تحقق من الإنترنت وحاول مرة أخرى");
   }
   saving = false; $("#saveBtn").textContent = "حفظ ونشر"; updateBar();
 });
 
-/* ---- Admin login (GitHub token kept only on this device) ---- */
-function openLogin(){ $("#login").hidden = false; $("#lg-repo").value = gh.repo || guessRepo(); $("#lg-token").value = ""; $("#lg-token").focus(); }
-function guessRepo(){ const m = location.hostname.match(/^([\w-]+)\.github\.io$/); const seg = location.pathname.split("/").filter(Boolean)[0]; return m ? (m[1] + "/" + (seg || (m[1]+".github.io"))) : ""; }
+/* Admin sign-in (Firebase email + password; the session stays on this device) */
+function openLogin(){ $("#login").hidden = false; $("#lg-err").textContent = ""; $("#lg-pass").value = ""; ($("#lg-email").value ? $("#lg-pass") : $("#lg-email")).focus(); }
 $("#lg-cancel").addEventListener("click", ()=>{ $("#login").hidden = true; });
-let fileMode = false;
-$("#lg-file").addEventListener("click", ()=>{ fileMode = true; $("#login").hidden = true; editing = true; updateBar(); render(); toast("عدّل ما تريد ثم اضغط «تنزيل ملف البيانات»"); });
-function downloadData(){
-  S.savedAt = Date.now();
-  const blob = new Blob([JSON.stringify(S)], {type:"application/json"});
-  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "data.json";
-  document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href), 5000);
-  $("#upHelp").hidden = false;
-  toast("نُزّل data.json. ارفعه الآن في GitHub");
-}
 $("#lg-form").addEventListener("submit", async e=>{
   e.preventDefault();
-  const repo = $("#lg-repo").value.trim().replace(/^https:\/\/github\.com\//,"").replace(/\/$/,""), token = $("#lg-token").value.trim();
-  if (!/^[\w.-]+\/[\w.-]+$/.test(repo) || !token){ $("#lg-err").textContent = "اكتب اسم المستودع بصيغة user/repo والمفتاح"; return; }
-  $("#lg-err").textContent = "جارٍ التحقق…";
+  if (!FAUTH){ $("#lg-err").textContent = "تعذّر الاتصال. تحقق من الإنترنت"; return; }
+  const email = $("#lg-email").value.trim(), pass = $("#lg-pass").value;
+  if (!email || !pass){ $("#lg-err").textContent = "اكتب البريد وكلمة المرور"; return; }
+  $("#lg-err").textContent = "جارٍ الدخول…"; $("#lg-go").disabled = true;
   try{
-    const r = await fetch(`https://api.github.com/repos/${repo}`, {headers:{"Authorization":"Bearer "+token, "Accept":"application/vnd.github+json"}});
-    if (!r.ok) throw r.status;
-    const j = await r.json();
-    if (j.permissions && !j.permissions.push) throw 403;
-    gh.repo = repo; gh.token = token;
-    try{ localStorage.setItem(GH_KEY, JSON.stringify(gh)); }catch(_){}
+    await FAUTH.signInWithEmailAndPassword(email, pass);
     $("#login").hidden = true; editing = true; updateBar(); render(); toast(dirty ? "تم الدخول. اضغط «حفظ ونشر» الآن" : "أهلاً بالمشرف ✎");
-  }catch(s){ $("#lg-err").textContent = s===404 ? "المفتاح لا يصل إلى هذا المستودع. اختر fatiy في Repository access" : s===401 ? "المفتاح غير صحيح أو انتهى. تأكد أنك نسخت أحدث مفتاح كاملاً" : "المفتاح بلا صلاحية كتابة. فعّل Contents: Read and write"; }
+  }catch(err){
+    const c = err && err.code;
+    $("#lg-err").textContent = c==="auth/too-many-requests" ? "محاولات كثيرة. انتظر دقائق ثم حاول" : c==="auth/network-request-failed" ? "لا يوجد اتصال بالإنترنت" : "البريد أو كلمة المرور غير صحيحة";
+  }
+  $("#lg-go").disabled = false;
 });
-$("#logoutBtn").addEventListener("click", ()=>{ if (dirty && !fileMode){ toast("احفظ أو ألغِ التعديلات أولاً"); return; } try{ localStorage.removeItem(GH_KEY); }catch(_){} gh.token = gh.repo = undefined; editing = false; fileMode = false; dirty = false; S = JSON.parse(ORIGINAL); updateBar(); render(); toast("خرجت من وضع المشرف على هذا الجهاز"); });
+$("#logoutBtn").addEventListener("click", async ()=>{ if (dirty){ toast("احفظ أو ألغِ التعديلات أولاً"); return; } try{ await FAUTH.signOut(); }catch(_){} editing = false; updateBar(); render(); toast("خرجت من وضع المشرف"); });
+
+/* Live updates: everyone sees changes as soon as a supervisor saves */
+if (FDB){
+  FDB.doc("fatiy/state").onSnapshot(snap=>{
+    if (!snap.exists || !snap.data().json) return;
+    const json = snap.data().json;
+    if (json === ORIG) return;
+    if (editing && dirty) return;
+    ORIG = json; S = JSON.parse(json); render(); loadImgs();
+  }, ()=>{});
+}
 
 window.addEventListener("hashchange", ()=>{ render(); window.scrollTo({top:0}); });
 render();
-
-/* Admin button: shown always (small); entering needs a GitHub key. ?admin in the link is not required. */
+loadImgs();
 $("#editBtn").hidden = false;
 }
 </script>
